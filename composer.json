@@ -11,7 +11,7 @@
         "doctrine/dbal": "^2.12",
         "flynsarmy/db-blade-compiler": "^5.5",
         "fzaninotto/faker": "^1.9",
-        "guzzlehttp/guzzle": "^7.2",
+        "guzzlehttp/guzzle": "^7.0",
         "intervention/image": "^2.5",
         "intervention/imagecache": "^2.5",
         "kalnoy/nestedset": "^5.0",
