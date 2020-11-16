@@ -30,11 +30,6 @@
             "BagistoPackages\\Shop\\Seeds\\": "src/Resources/database/seeds"
         }
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.x-dev"
-        }
-    },
     "config": {
         "sort-packages": true
     },
