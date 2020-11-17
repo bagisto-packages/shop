@@ -18,7 +18,7 @@ class ChannelTableSeeder extends Seeder
             'theme' => 'velocity',
             'hostname' => config('app.url'),
             'root_category_id' => 1,
-            'home_page_content' => '<p>@include("shop::home.slider") @include("shop::home.featured-products") @include("shop::home.new-products")</p>
+            'home_page_content' => '<p>@include("shop::home.featured-products") @include("shop::home.new-products")</p>
             <div class="banner-container">
             <div class="left-banner"><img src=' . asset("/themes/default/assets/images/1.webp") . ' data-src=' . asset("/themes/default/assets/images/1.webp") . ' class="lazyload" alt="test" width="720" height="720" /></div>
             <div class="right-banner"><img src=' . asset("/themes/default/assets/images/2.webp") . ' data-src=' . asset("/themes/default/assets/images/2.webp") . ' class="lazyload" alt="test" width="460" height="330" /> <img src=' . asset("/themes/default/assets/images/3.webp") . ' data-src=' . asset("/themes/default/assets/images/3.webp") . '  class="lazyload" alt="test" width="460" height="330" /></div>

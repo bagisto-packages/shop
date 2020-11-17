@@ -19,7 +19,8 @@ class CurrencyTableSeeder extends Seeder
                 'code' => 'USD',
                 'name' => 'US Dollar',
                 'symbol' => '$',
-            ], [
+            ],
+            [
                 'id' => 2,
                 'code' => 'EUR',
                 'name' => 'Euro',

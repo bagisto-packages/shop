@@ -17,12 +17,14 @@ class CustomerGroupTableSeeder extends Seeder
                 'code' => 'guest',
                 'name' => 'Guest',
                 'is_user_defined' => 0,
-            ], [
+            ],
+            [
                 'id' => 2,
                 'code' => 'general',
                 'name' => 'General',
                 'is_user_defined' => 0
-            ], [
+            ],
+            [
                 'id' => 3,
                 'code' => 'wholesale',
                 'name' => 'Wholesale',

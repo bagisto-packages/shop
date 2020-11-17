@@ -18,43 +18,53 @@ class CMSPagesTableSeeder extends Seeder
                 'id' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-            ], [
+            ],
+            [
                 'id' => 2,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-            ], [
+            ],
+            [
                 'id' => 3,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-            ], [
+            ],
+            [
                 'id' => 4,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-            ], [
+            ],
+            [
                 'id' => 5,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-            ], [
+            ],
+            [
                 'id' => 6,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-            ], [
+            ],
+            [
                 'id' => 7,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-            ], [
+            ],
+            [
                 'id' => 8,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-            ], [
+            ],
+            [
                 'id' => 9,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-            ], [
+            ],
+            [
                 'id' => 10,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-            ], [
+            ],
+            [
                 'id' => 11,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -71,7 +81,8 @@ class CMSPagesTableSeeder extends Seeder
                 'meta_title' => 'about us',
                 'meta_description' => '',
                 'meta_keywords' => 'aboutus',
-            ], [
+            ],
+            [
                 'locale' => 'en',
                 'cms_page_id' => 2,
                 'url_key' => 'return-policy',
@@ -80,7 +91,8 @@ class CMSPagesTableSeeder extends Seeder
                 'meta_title' => 'return policy',
                 'meta_description' => '',
                 'meta_keywords' => 'return, policy',
-            ], [
+            ],
+            [
                 'locale' => 'en',
                 'cms_page_id' => 3,
                 'url_key' => 'refund-policy',
@@ -89,7 +101,8 @@ class CMSPagesTableSeeder extends Seeder
                 'meta_title' => 'Refund policy',
                 'meta_description' => '',
                 'meta_keywords' => 'refund, policy',
-            ], [
+            ],
+            [
                 'locale' => 'en',
                 'cms_page_id' => 4,
                 'url_key' => 'terms-conditions',
@@ -98,7 +111,8 @@ class CMSPagesTableSeeder extends Seeder
                 'meta_title' => 'Terms & Conditions',
                 'meta_description' => '',
                 'meta_keywords' => 'term, conditions',
-            ], [
+            ],
+            [
                 'locale' => 'en',
                 'cms_page_id' => 5,
                 'url_key' => 'terms-of-use',
@@ -107,7 +121,8 @@ class CMSPagesTableSeeder extends Seeder
                 'meta_title' => 'Terms of use',
                 'meta_description' => '',
                 'meta_keywords' => 'term, use',
-            ], [
+            ],
+            [
                 'locale' => 'en',
                 'cms_page_id' => 6,
                 'url_key' => 'contact-us',
@@ -116,7 +131,8 @@ class CMSPagesTableSeeder extends Seeder
                 'meta_title' => 'Contact Us',
                 'meta_description' => '',
                 'meta_keywords' => 'contact, us',
-            ], [
+            ],
+            [
                 'locale' => 'en',
                 'cms_page_id' => 7,
                 'url_key' => 'cutomer-service',
@@ -125,7 +141,8 @@ class CMSPagesTableSeeder extends Seeder
                 'meta_title' => 'Customer Service',
                 'meta_description' => '',
                 'meta_keywords' => 'customer, service',
-            ], [
+            ],
+            [
                 'locale' => 'en',
                 'cms_page_id' => 8,
                 'url_key' => 'whats-new',
@@ -134,7 +151,8 @@ class CMSPagesTableSeeder extends Seeder
                 'meta_title' => 'What\'s New',
                 'meta_description' => '',
                 'meta_keywords' => 'new',
-            ], [
+            ],
+            [
                 'locale' => 'en',
                 'cms_page_id' => 9,
                 'url_key' => 'payment-policy',
@@ -143,7 +161,8 @@ class CMSPagesTableSeeder extends Seeder
                 'meta_title' => 'Payment Policy',
                 'meta_description' => '',
                 'meta_keywords' => 'payment, policy',
-            ], [
+            ],
+            [
                 'locale' => 'en',
                 'cms_page_id' => 10,
                 'url_key' => 'shipping-policy',
@@ -152,7 +171,8 @@ class CMSPagesTableSeeder extends Seeder
                 'meta_title' => 'Shipping Policy',
                 'meta_description' => '',
                 'meta_keywords' => 'shipping, policy',
-            ], [
+            ],
+            [
                 'locale' => 'en',
                 'cms_page_id' => 11,
                 'url_key' => 'privacy-policy',
