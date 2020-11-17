@@ -83,7 +83,7 @@ class CoreConfigRepository extends Repository
                 if (!count($coreConfigValue)) {
                     $this->model->create([
                         'code' => $fieldName,
-                        'value' => $value,
+                        'value' => $value ?? '',
                         'locale_code' => $localeBased ? $locale : null,
                         'channel_code' => $channelBased ? $channel : null,
                     ]);
@@ -96,7 +96,7 @@ class CoreConfigRepository extends Repository
                         } else {
                             $coreConfig->update([
                                 'code' => $fieldName,
-                                'value' => $value,
+                                'value' => $value ?? '',
                                 'locale_code' => $localeBased ? $locale : null,
                                 'channel_code' => $channelBased ? $channel : null,
                             ]);
