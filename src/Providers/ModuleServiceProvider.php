@@ -11,105 +11,110 @@ use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\Facades\Validator;
 use BagistoPackages\Shop\Models\Customer;
 use Konekt\Concord\BaseBoxServiceProvider;
+use \BagistoPackages\Shop\Models as Models;
+use \BagistoPackages\Shop\Facades as Facades;
 use BagistoPackages\Ui\ViewRenderEventManager;
+use \BagistoPackages\Shop\Observers as Observers;
 use BagistoPackages\Shop\View\Compilers\BladeCompiler;
+use \BagistoPackages\Shop\Console\Commands as Commands;
+use \BagistoPackages\Shop\Http\Middleware as Middleware;
 
 class ModuleServiceProvider extends BaseBoxServiceProvider
 {
     protected $models = [
-        \BagistoPackages\Shop\Models\Channel::class,
-        \BagistoPackages\Shop\Models\CoreConfig::class,
-        \BagistoPackages\Shop\Models\Country::class,
-        \BagistoPackages\Shop\Models\CountryTranslation::class,
-        \BagistoPackages\Shop\Models\CountryState::class,
-        \BagistoPackages\Shop\Models\CountryStateTranslation::class,
-        \BagistoPackages\Shop\Models\Currency::class,
-        \BagistoPackages\Shop\Models\CurrencyExchangeRate::class,
-        \BagistoPackages\Shop\Models\Locale::class,
-        \BagistoPackages\Shop\Models\Slider::class,
-        \BagistoPackages\Shop\Models\SubscribersList::class,
+        Models\Channel::class,
+        Models\CoreConfig::class,
+        Models\Country::class,
+        Models\CountryTranslation::class,
+        Models\CountryState::class,
+        Models\CountryStateTranslation::class,
+        Models\Currency::class,
+        Models\CurrencyExchangeRate::class,
+        Models\Locale::class,
+        Models\Slider::class,
+        Models\SubscribersList::class,
 
-        \BagistoPackages\Shop\Models\Attribute::class,
-        \BagistoPackages\Shop\Models\AttributeFamily::class,
-        \BagistoPackages\Shop\Models\AttributeGroup::class,
-        \BagistoPackages\Shop\Models\AttributeOption::class,
-        \BagistoPackages\Shop\Models\AttributeOptionTranslation::class,
-        \BagistoPackages\Shop\Models\AttributeTranslation::class,
+        Models\Attribute::class,
+        Models\AttributeFamily::class,
+        Models\AttributeGroup::class,
+        Models\AttributeOption::class,
+        Models\AttributeOptionTranslation::class,
+        Models\AttributeTranslation::class,
 
-        \BagistoPackages\Shop\Models\BookingProduct::class,
-        \BagistoPackages\Shop\Models\BookingProductDefaultSlot::class,
-        \BagistoPackages\Shop\Models\BookingProductAppointmentSlot::class,
-        \BagistoPackages\Shop\Models\BookingProductEventTicket::class,
-        \BagistoPackages\Shop\Models\BookingProductEventTicketTranslation::class,
-        \BagistoPackages\Shop\Models\BookingProductRentalSlot::class,
-        \BagistoPackages\Shop\Models\BookingProductTableSlot::class,
-        \BagistoPackages\Shop\Models\Booking::class,
+        Models\BookingProduct::class,
+        Models\BookingProductDefaultSlot::class,
+        Models\BookingProductAppointmentSlot::class,
+        Models\BookingProductEventTicket::class,
+        Models\BookingProductEventTicketTranslation::class,
+        Models\BookingProductRentalSlot::class,
+        Models\BookingProductTableSlot::class,
+        Models\Booking::class,
 
-        \BagistoPackages\Shop\Models\CartRule::class,
-        \BagistoPackages\Shop\Models\CartRuleTranslation::class,
-        \BagistoPackages\Shop\Models\CartRuleCustomer::class,
-        \BagistoPackages\Shop\Models\CartRuleCoupon::class,
-        \BagistoPackages\Shop\Models\CartRuleCouponUsage::class,
+        Models\CartRule::class,
+        Models\CartRuleTranslation::class,
+        Models\CartRuleCustomer::class,
+        Models\CartRuleCoupon::class,
+        Models\CartRuleCouponUsage::class,
 
-        \BagistoPackages\Shop\Models\CatalogRule::class,
-        \BagistoPackages\Shop\Models\CatalogRuleProduct::class,
-        \BagistoPackages\Shop\Models\CatalogRuleProductPrice::class,
+        Models\CatalogRule::class,
+        Models\CatalogRuleProduct::class,
+        Models\CatalogRuleProductPrice::class,
 
-        \BagistoPackages\Shop\Models\Category::class,
-        \BagistoPackages\Shop\Models\CategoryTranslation::class,
+        Models\Category::class,
+        Models\CategoryTranslation::class,
 
-        \BagistoPackages\Shop\Models\Cart::class,
-        \BagistoPackages\Shop\Models\CartAddress::class,
-        \BagistoPackages\Shop\Models\CartItem::class,
-        \BagistoPackages\Shop\Models\CartPayment::class,
-        \BagistoPackages\Shop\Models\CartShippingRate::class,
+        Models\Cart::class,
+        Models\CartAddress::class,
+        Models\CartItem::class,
+        Models\CartPayment::class,
+        Models\CartShippingRate::class,
 
-        \BagistoPackages\Shop\Models\Customer::class,
-        \BagistoPackages\Shop\Models\CustomerCompareProduct::class,
-        \BagistoPackages\Shop\Models\CustomerAddress::class,
-        \BagistoPackages\Shop\Models\CustomerGroup::class,
-        \BagistoPackages\Shop\Models\Wishlist::class,
+        Models\Customer::class,
+        Models\CustomerCompareProduct::class,
+        Models\CustomerAddress::class,
+        Models\CustomerGroup::class,
+        Models\Wishlist::class,
 
-        \BagistoPackages\Shop\Models\Admin::class,
-        \BagistoPackages\Shop\Models\Role::class,
+        Models\Admin::class,
+        Models\Role::class,
 
-        \BagistoPackages\Shop\Models\InventorySource::class,
+        Models\InventorySource::class,
 
-        \BagistoPackages\Shop\Models\TaxCategory::class,
-        \BagistoPackages\Shop\Models\TaxMap::class,
-        \BagistoPackages\Shop\Models\TaxRate::class,
+        Models\TaxCategory::class,
+        Models\TaxMap::class,
+        Models\TaxRate::class,
 
-        \BagistoPackages\Shop\Models\Product::class,
-        \BagistoPackages\Shop\Models\ProductAttributeValue::class,
-        \BagistoPackages\Shop\Models\ProductFlat::class,
-        \BagistoPackages\Shop\Models\ProductImage::class,
-        \BagistoPackages\Shop\Models\ProductInventory::class,
-        \BagistoPackages\Shop\Models\ProductOrderedInventory::class,
-        \BagistoPackages\Shop\Models\ProductReview::class,
-        \BagistoPackages\Shop\Models\ProductSalableInventory::class,
-        \BagistoPackages\Shop\Models\ProductDownloadableSample::class,
-        \BagistoPackages\Shop\Models\ProductDownloadableLink::class,
-        \BagistoPackages\Shop\Models\ProductGroupedProduct::class,
-        \BagistoPackages\Shop\Models\ProductBundleOption::class,
-        \BagistoPackages\Shop\Models\ProductBundleOptionTranslation::class,
-        \BagistoPackages\Shop\Models\ProductBundleOptionProduct::class,
-        \BagistoPackages\Shop\Models\ProductCustomerGroupPrice::class,
+        Models\Product::class,
+        Models\ProductAttributeValue::class,
+        Models\ProductFlat::class,
+        Models\ProductImage::class,
+        Models\ProductInventory::class,
+        Models\ProductOrderedInventory::class,
+        Models\ProductReview::class,
+        Models\ProductSalableInventory::class,
+        Models\ProductDownloadableSample::class,
+        Models\ProductDownloadableLink::class,
+        Models\ProductGroupedProduct::class,
+        Models\ProductBundleOption::class,
+        Models\ProductBundleOptionTranslation::class,
+        Models\ProductBundleOptionProduct::class,
+        Models\ProductCustomerGroupPrice::class,
 
-        \BagistoPackages\Shop\Models\Order::class,
-        \BagistoPackages\Shop\Models\OrderItem::class,
-        \BagistoPackages\Shop\Models\DownloadableLinkPurchased::class,
-        \BagistoPackages\Shop\Models\OrderAddress::class,
-        \BagistoPackages\Shop\Models\OrderPayment::class,
-        \BagistoPackages\Shop\Models\OrderComment::class,
-        \BagistoPackages\Shop\Models\Invoice::class,
-        \BagistoPackages\Shop\Models\InvoiceItem::class,
-        \BagistoPackages\Shop\Models\Shipment::class,
-        \BagistoPackages\Shop\Models\ShipmentItem::class,
-        \BagistoPackages\Shop\Models\Refund::class,
-        \BagistoPackages\Shop\Models\RefundItem::class,
+        Models\Order::class,
+        Models\OrderItem::class,
+        Models\DownloadableLinkPurchased::class,
+        Models\OrderAddress::class,
+        Models\OrderPayment::class,
+        Models\OrderComment::class,
+        Models\Invoice::class,
+        Models\InvoiceItem::class,
+        Models\Shipment::class,
+        Models\ShipmentItem::class,
+        Models\Refund::class,
+        Models\RefundItem::class,
 
-        \BagistoPackages\Shop\Models\CmsPage::class,
-        \BagistoPackages\Shop\Models\CmsPageTranslation::class
+        Models\CmsPage::class,
+        Models\CmsPageTranslation::class
     ];
 
     public function boot()
@@ -134,21 +139,24 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
             ]
         ]));
 
-        $this->app->bind(\Illuminate\Contracts\Debug\ExceptionHandler::class, \BagistoPackages\Shop\Exceptions\Handler::class);
+        $this->app->bind(
+            \Illuminate\Contracts\Debug\ExceptionHandler::class,
+            \BagistoPackages\Shop\Exceptions\Handler::class
+        );
 
-        $router->aliasMiddleware('theme', \BagistoPackages\Shop\Http\Middleware\Theme::class);
-        $router->aliasMiddleware('locale', \BagistoPackages\Shop\Http\Middleware\Locale::class);
-        $router->aliasMiddleware('currency', \BagistoPackages\Shop\Http\Middleware\Currency::class);
-        $router->aliasMiddleware('admin', \BagistoPackages\Shop\Http\Middleware\Bouncer::class);
-        $router->aliasMiddleware('customer', \BagistoPackages\Shop\Http\Middleware\RedirectIfNotCustomer::class);
+        $router->aliasMiddleware('theme', Middleware\Theme::class);
+        $router->aliasMiddleware('admin', Middleware\Bouncer::class);
+        $router->aliasMiddleware('locale', Middleware\Locale::class);
+        $router->aliasMiddleware('currency', Middleware\Currency::class);
+        $router->aliasMiddleware('customer', Middleware\RedirectIfNotCustomer::class);
 
         Validator::extend('slug', 'BagistoPackages\Shop\Contracts\Validations\Slug@passes');
         Validator::extend('code', 'BagistoPackages\Shop\Contracts\Validations\Code@passes');
         Validator::extend('decimal', 'BagistoPackages\Shop\Contracts\Validations\Decimal@passes');
 
-        \BagistoPackages\Shop\Models\SliderProxy::observe(\BagistoPackages\Shop\Observers\SliderObserver::class);
-        \BagistoPackages\Shop\Models\ProductProxy::observe(\BagistoPackages\Shop\Observers\ProductObserver::class);
-        \BagistoPackages\Shop\Models\CategoryProxy::observe(\BagistoPackages\Shop\Observers\CategoryObserver::class);
+        Models\SliderProxy::observe(Observers\SliderObserver::class);
+        Models\ProductProxy::observe(Observers\ProductObserver::class);
+        Models\CategoryProxy::observe(Observers\CategoryObserver::class);
 
         Paginator::defaultView('shop::partials.pagination');
         Paginator::defaultSimpleView('shop::partials.pagination');
@@ -264,12 +272,12 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                \BagistoPackages\Shop\Console\Commands\Install::class,
-                \BagistoPackages\Shop\Console\Commands\ExchangeRateUpdate::class,
-                \BagistoPackages\Shop\Console\Commands\BookingCron::class,
-                \BagistoPackages\Shop\Console\Commands\PriceRuleIndex::class,
-                \BagistoPackages\Shop\Console\Commands\PriceUpdate::class,
-                \BagistoPackages\Shop\Console\Commands\GenerateProducts::class,
+                Commands\Install::class,
+                Commands\ExchangeRateUpdate::class,
+                Commands\BookingCron::class,
+                Commands\PriceRuleIndex::class,
+                Commands\PriceUpdate::class,
+                Commands\GenerateProducts::class,
             ]);
         }
     }
@@ -284,7 +292,7 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
     protected function registerCore()
     {
         $loader = AliasLoader::getInstance();
-        $loader->alias('core', \BagistoPackages\Shop\Facades\Core::class);
+        $loader->alias('core', Facades\Core::class);
 
         $this->app->singleton('core', function () {
             return app()->make(\BagistoPackages\Shop\Core::class);
@@ -294,7 +302,7 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
     protected function registerCart()
     {
         $loader = AliasLoader::getInstance();
-        $loader->alias('cart', \BagistoPackages\Shop\Facades\Cart::class);
+        $loader->alias('cart', Facades\Cart::class);
 
         $this->app->singleton('cart', function () {
             return new \BagistoPackages\Shop\Facades\Cart();
@@ -306,7 +314,7 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
     protected function registerBouncer()
     {
         $loader = AliasLoader::getInstance();
-        $loader->alias('Bouncer', \BagistoPackages\Shop\Facades\Bouncer::class);
+        $loader->alias('Bouncer', Facades\Bouncer::class);
 
         $this->app->singleton('bouncer', function () {
             return new \BagistoPackages\Shop\Bouncer();
@@ -316,7 +324,7 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
     protected function registerPayment()
     {
         $loader = AliasLoader::getInstance();
-        $loader->alias('payment', \BagistoPackages\Shop\Facades\Payment::class);
+        $loader->alias('payment', Facades\Payment::class);
 
         $this->app->singleton('payment', function () {
             return new \BagistoPackages\Shop\Payment();
@@ -326,7 +334,7 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
     protected function registerShipping()
     {
         $loader = AliasLoader::getInstance();
-        $loader->alias('shipping', \BagistoPackages\Shop\Facades\Shipping::class);
+        $loader->alias('shipping', Facades\Shipping::class);
 
         $this->app->singleton('shipping', function () {
             return new \BagistoPackages\Shop\Shipping();
