@@ -1,5 +1,6 @@
 {
     "name": "bagisto-packages/shop",
+    "description": "Bagisto Shop plugin.",
     "license": "MIT",
     "require": {
         "algolia/algoliasearch-client-php": "^2.7",
