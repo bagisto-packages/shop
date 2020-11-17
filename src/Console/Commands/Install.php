@@ -65,8 +65,7 @@ class Install extends Command
 
         $this->info('-----------------------------');
         $this->info('Congratulations!');
-        $this->info('The installation has been finished and you can now use Bagisto.');
-        $this->info('Cheers!');
+        $this->info('The installation has been finished.');
     }
 
     /**

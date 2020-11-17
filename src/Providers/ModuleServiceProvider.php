@@ -255,7 +255,6 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
 
     protected function registerConfig()
     {
-        $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/scout.php', 'scout');
         $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/system.php', 'core');
         $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/themes.php', 'themes');
         $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/carriers.php', 'carriers');
@@ -263,9 +262,6 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
         $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/imagecache.php', 'imagecache');
         $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/productTypes.php', 'product_types');
         $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/paymentMethods.php', 'paymentmethods');
-        $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/db-blade-compiler.php', 'db-blade-compiler');
-        $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/elastic.client.php', 'elastic.client');
-        $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/elastic.scout_driver.php', 'elastic.scout_driver');
     }
 
     protected function registerCommands()
@@ -273,11 +269,10 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([
                 Commands\Install::class,
-                Commands\ExchangeRateUpdate::class,
+                Commands\PriceUpdate::class,
                 Commands\BookingCron::class,
                 Commands\PriceRuleIndex::class,
-                Commands\PriceUpdate::class,
-                Commands\GenerateProducts::class,
+                Commands\ExchangeRateUpdate::class,
             ]);
         }
     }

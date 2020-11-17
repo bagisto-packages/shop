@@ -53,16 +53,12 @@ class PriceUpdate extends Command
             request()->request->set('channel', $product->channel);
 
             $product->min_price = $product->getTypeInstance()->getMinimalPrice();
-
             $product->max_price = $product->getTypeInstance()->getMaximamPrice();
-
             $product->save();
 
             if ($product->parent) {
                 $product->parent->min_price = $product->parent->getTypeInstance()->getMinimalPrice();
-
                 $product->parent->max_price = $product->parent->getTypeInstance()->getMaximamPrice();
-
                 $product->parent->save();
             } else {
                 $bundleProducts = $this->productFlatRepository->getModel()
@@ -76,9 +72,7 @@ class PriceUpdate extends Command
 
                 foreach ($bundleProducts as $bundleProduct) {
                     $bundleProduct->min_price = $bundleProduct->getTypeInstance()->getMinimalPrice();
-
                     $bundleProduct->max_price = $bundleProduct->getTypeInstance()->getMaximamPrice();
-
                     $bundleProduct->save();
                 }
             }
