@@ -184,9 +184,6 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
         $this->composeView();
 
         $this->publishes([
-            __DIR__ . '/../Resources/config/elastic.scout_driver.php' => config_path('elastic.scout_driver.php'),
-            __DIR__ . '/../Resources/config/db-blade-compiler.php' => config_path('db-blade-compiler.php'),
-            __DIR__ . '/../Resources/config/elastic.client.php' => config_path('elastic.client.php'),
             __DIR__ . '/../Resources/config/imagecache.php' => config_path('imagecache.php'),
             __DIR__ . '/../Resources/config/themes.php' => config_path('themes.php'),
             __DIR__ . '/../Resources/config/scout.php' => config_path('scout.php'),
