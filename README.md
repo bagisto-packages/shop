@@ -8,6 +8,16 @@
 [packagist-version]: https://img.shields.io/packagist/v/bagisto-packages/shop.svg?style=flat
 [packagist-downloads]: https://img.shields.io/packagist/dm/bagisto-packages/shop.svg?style=flat
 
+## Installing
+
+You may use Composer to install shop plugin into your new Laravel project:
+
+```
+composer require bagisto-packages/shop
+```
+
+After installing package, you should run the ```bagisto:install``` Artisan command.
+
 ## Security Vulnerabilities
 
 If you discover a security vulnerability within Bagisto Shop Plugin, please send an e-mail to Ivan Boldyrev at iboldurev@bagisto-packages.com. All security vulnerabilities will be promptly addressed.
