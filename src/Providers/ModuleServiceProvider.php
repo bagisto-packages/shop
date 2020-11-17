@@ -139,6 +139,14 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
             ]
         ]));
 
+        config()->set('auth.passwords', array_merge(config('auth.passwords'), [
+            'customers' => [
+                'provider' => 'customer',
+                'table' => 'customer_password_resets',
+                'expire' => 60,
+            ]
+        ]));
+
         $this->app->bind(
             \Illuminate\Contracts\Debug\ExceptionHandler::class,
             \BagistoPackages\Shop\Exceptions\Handler::class
