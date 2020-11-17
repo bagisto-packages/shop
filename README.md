@@ -8,6 +8,10 @@
 [packagist-version]: https://img.shields.io/packagist/v/bagisto-packages/shop.svg?style=flat
 [packagist-downloads]: https://img.shields.io/packagist/dm/bagisto-packages/shop.svg?style=flat
 
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Bagisto Shop Plugin, please send an e-mail to Ivan Boldyrev at iboldurev@bagisto-packages.com. All security vulnerabilities will be promptly addressed.
+
 ## License
 
 Laravel Tinker is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
