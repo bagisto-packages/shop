@@ -236,7 +236,7 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
         view()->composer('shop::customers.account.partials.sidemenu', function ($view) {
             $tree = Tree::create();
 
-            foreach (config('menu.customer') as $item) {
+            foreach (config('menu.customer.items') as $item) {
                 $tree->add($item, 'menu');
             }
 
