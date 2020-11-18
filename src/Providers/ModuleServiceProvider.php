@@ -197,7 +197,7 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
         ]);
 
         $this->publishes([
-            __DIR__ . '/../Resources/views' => resource_path('views/vendor/themes/default'),
+            __DIR__ . '/../Resources/views' => resource_path('views/themes/default'),
             __DIR__ . '/../Resources/lang' => resource_path('lang/vendor/shop'),
         ]);
 
