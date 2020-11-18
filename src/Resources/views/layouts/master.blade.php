@@ -49,8 +49,6 @@
 
         {!! view_render_event('bagisto.shop.layout.header.after') !!}
 
-        @yield('slider')
-
         <main class="content-container">
 
             {!! view_render_event('bagisto.shop.layout.content.before') !!}

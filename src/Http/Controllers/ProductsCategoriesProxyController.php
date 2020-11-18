@@ -63,14 +63,6 @@ class ProductsCategoriesProxyController extends Controller
             abort(404);
         }
 
-        $sliderRepository = app('BagistoPackages\Shop\Repositories\SliderRepository');
-
-        $sliderData = $sliderRepository
-            ->where('channel_id', core()->getCurrentChannel()->id)
-            ->where('locale', core()->getCurrentLocale()->code)
-            ->get()
-            ->toArray();
-
-        return view('shop::home.index', compact('sliderData'));
+        return view('shop::home.index');
     }
 }

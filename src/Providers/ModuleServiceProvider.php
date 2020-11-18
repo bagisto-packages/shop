@@ -31,7 +31,6 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
         Models\Currency::class,
         Models\CurrencyExchangeRate::class,
         Models\Locale::class,
-        Models\Slider::class,
         Models\SubscribersList::class,
 
         Models\Attribute::class,
@@ -162,7 +161,6 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
         Validator::extend('code', 'BagistoPackages\Shop\Contracts\Validations\Code@passes');
         Validator::extend('decimal', 'BagistoPackages\Shop\Contracts\Validations\Decimal@passes');
 
-        Models\SliderProxy::observe(Observers\SliderObserver::class);
         Models\ProductProxy::observe(Observers\ProductObserver::class);
         Models\CategoryProxy::observe(Observers\CategoryObserver::class);
 

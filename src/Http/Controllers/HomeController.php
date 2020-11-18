@@ -2,18 +2,10 @@
 
 namespace BagistoPackages\Shop\Http\Controllers;
 
-use BagistoPackages\Shop\Repositories\SliderRepository;
 use BagistoPackages\Shop\Repositories\SearchRepository;
 
 class HomeController extends Controller
 {
-    /**
-     * SliderRepository object
-     *
-     * @var SliderRepository
-    */
-    protected $sliderRepository;
-
     /**
      * SearchRepository object
      *
@@ -24,13 +16,11 @@ class HomeController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @param SliderRepository $sliderRepository
      * @param SearchRepository $searchRepository
      * @return void
     */
-    public function __construct(SliderRepository $sliderRepository, SearchRepository $searchRepository)
+    public function __construct(SearchRepository $searchRepository)
     {
-        $this->sliderRepository = $sliderRepository;
         $this->searchRepository = $searchRepository;
 
         parent::__construct();
@@ -43,17 +33,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $currentChannel = core()->getCurrentChannel();
-
-        $currentLocale = core()->getCurrentLocale();
-
-        $sliderData = $this->sliderRepository
-            ->where('channel_id', $currentChannel->id)
-            ->where('locale', $currentLocale->code)
-            ->get()
-            ->toArray();
-
-        return view('shop::home.index', compact('sliderData'));
+        return view('shop::home.index');
     }
 
     /**
