@@ -248,7 +248,7 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
 
     protected function registerConfig()
     {
-        $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/system.php', 'core');
+        $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/core.php', 'core');
         $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/themes.php', 'themes');
         $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/carriers.php', 'carriers');
         $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/menu.php', 'menu.customer');
