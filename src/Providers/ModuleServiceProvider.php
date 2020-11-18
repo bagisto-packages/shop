@@ -194,7 +194,6 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
         $this->publishes([
             __DIR__ . '/../Resources/config/imagecache.php' => config_path('imagecache.php'),
             __DIR__ . '/../Resources/config/themes.php' => config_path('themes.php'),
-            __DIR__ . '/../Resources/config/scout.php' => config_path('scout.php'),
         ]);
 
         $this->publishes([
