@@ -12,7 +12,6 @@ mix
     .copy(__dirname + "/src/Resources/assets/images", publicPath + "/images")
     .sass(__dirname + "/src/Resources/assets/sass/app.scss", "css/shop.css")
     .sass(__dirname + "/src/Resources/assets/sass/default.scss", "css/default-booking.css")
-    .sass(__dirname + "/src/Resources/assets/sass/velocity.scss", "css/velocity-booking.css")
     .options({
         processCssUrls: false
     });
