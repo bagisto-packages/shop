@@ -24,8 +24,6 @@ class SubscriptionController extends Controller
     public function __construct(SubscribersListRepository $subscriptionRepository)
     {
         $this->subscriptionRepository = $subscriptionRepository;
-
-        parent::__construct();
     }
 
     /**

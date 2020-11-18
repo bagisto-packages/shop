@@ -24,8 +24,6 @@ class ShopController extends Controller
     {
         $this->wishlistRepository = $wishlistRepository;
         $this->compareProductRepository = $compareProductRepository;
-
-        parent::__construct();
     }
 
     public function getItemsCount()

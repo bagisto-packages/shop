@@ -25,8 +25,6 @@ class DownloadableProductController extends Controller
         $this->middleware('customer');
 
         $this->downloadableLinkPurchasedRepository = $downloadableLinkPurchasedRepository;
-
-        parent::__construct();
     }
 
     /**

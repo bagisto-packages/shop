@@ -25,8 +25,6 @@ class AddressController extends Controller
         $this->middleware('customer');
 
         $this->customerAddressRepository = $customerAddressRepository;
-
-        parent::__construct();
     }
 
     /**

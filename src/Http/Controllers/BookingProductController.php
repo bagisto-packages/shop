@@ -42,8 +42,6 @@ class BookingProductController extends Controller
         $this->bookingHelpers['rental'] = $rentalSlotHelper;
         $this->bookingHelpers['event'] = $eventTicketHelper;
         $this->bookingHelpers['table'] = $tableSlotHelper;
-
-        parent::__construct();
     }
 
     /**

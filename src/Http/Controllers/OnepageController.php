@@ -37,8 +37,6 @@ class OnepageController extends Controller
     {
         $this->orderRepository = $orderRepository;
         $this->customerRepository = $customerRepository;
-
-        parent::__construct();
     }
 
     /**

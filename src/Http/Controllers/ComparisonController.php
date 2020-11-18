@@ -38,8 +38,6 @@ class ComparisonController extends Controller
         $this->compareProductRepository = $compareProductRepository;
         $this->productFlatRepository = $productFlatRepository;
         $this->productRepository = $productRepository;
-
-        parent::__construct();
     }
 
     /**

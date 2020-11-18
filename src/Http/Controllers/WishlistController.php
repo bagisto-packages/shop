@@ -35,8 +35,6 @@ class WishlistController extends Controller
 
         $this->wishlistRepository = $wishlistRepository;
         $this->productRepository = $productRepository;
-
-        parent::__construct();
     }
 
     /**

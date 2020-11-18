@@ -33,8 +33,6 @@ class SmartButtonController extends Controller
     {
         $this->orderRepository = $orderRepository;
         $this->invoiceRepository = $invoiceRepository;
-
-        parent::__construct();
     }
 
     /**

@@ -2,22 +2,15 @@
 
 namespace BagistoPackages\Shop\Http\Controllers;
 
-use BagistoPackages\Shop\Facades\Cart;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Event;
+use BagistoPackages\Shop\Facades\Cart;
+use BagistoPackages\Shop\Contracts\Cart as CartModel;
 use BagistoPackages\Shop\Repositories\WishlistRepository;
 use BagistoPackages\Shop\Repositories\ProductRepository;
-use BagistoPackages\Shop\Contracts\Cart as CartModel;
-use Illuminate\Support\Facades\Event;
 
 class CartController extends Controller
 {
-    /**
-     * Contains route related configuration
-     *
-     * @var array
-     */
-    protected $_config;
-
     /**
      * WishlistRepository Repository object
      *
@@ -44,8 +37,6 @@ class CartController extends Controller
 
         $this->wishlistRepository = $wishlistRepository;
         $this->productRepository = $productRepository;
-
-        $this->_config = request('_config');
     }
 
     /**
@@ -64,7 +55,7 @@ class CartController extends Controller
      * Function for guests user to add the product in the cart.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      * @throws \Prettus\Repository\Exceptions\RepositoryException
      */
     public function add($id)
@@ -89,7 +80,7 @@ class CartController extends Controller
                     return redirect()->route('shop.checkout.onepage.index');
                 }
             }
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             session()->flash('warning', __($e->getMessage()));
 
             $product = $this->productRepository->find($id);
@@ -106,8 +97,8 @@ class CartController extends Controller
     /**
      * Removes the item from the cart if it exists
      *
-     * @param  int  $itemId
-     * @return \Illuminate\Http\Response
+     * @param int $itemId
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function remove($itemId)
     {
@@ -123,7 +114,7 @@ class CartController extends Controller
     /**
      * Updates the quantity of the items present in the cart.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function updateBeforeCheckout()
     {
@@ -133,7 +124,7 @@ class CartController extends Controller
             if ($result) {
                 session()->flash('success', trans('shop::app.checkout.cart.quantity.success'));
             }
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             session()->flash('error', trans($e->getMessage()));
         }
 
@@ -143,8 +134,8 @@ class CartController extends Controller
     /**
      * Function to move a already added product to wishlist will run only on customer authentication.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function moveToWishlist($id)
     {
@@ -162,8 +153,8 @@ class CartController extends Controller
     /**
      * Apply coupon to the cart
      *
-     * @return \Illuminate\Http\Response
-    */
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function applyCoupon()
     {
         $couponCode = request()->get('code');
@@ -197,8 +188,8 @@ class CartController extends Controller
     /**
      * Apply coupon to the cart
      *
-     * @return \Illuminate\Http\Response
-    */
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function removeCoupon()
     {
         Cart::removeCouponCode()->collectTotals();
@@ -213,7 +204,7 @@ class CartController extends Controller
      * Returns true, if result of adding product to cart
      * is an array and contains a key "warning" or "info"
      *
-     * @param  array  $result
+     * @param array $result
      *
      * @return boolean
      */

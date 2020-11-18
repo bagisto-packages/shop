@@ -2,16 +2,13 @@
 
 namespace BagistoPackages\Shop\Http\Controllers;
 
-//use Illuminate\Foundation\Auth\ResetsPasswords;
-use Illuminate\Support\Facades\Password;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Auth\Events\PasswordReset;
 
 class ResetPasswordController extends Controller
 {
-//    use ResetsPasswords;
-
     /**
      * Display the password reset view for the given token.
      *

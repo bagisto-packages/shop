@@ -35,8 +35,6 @@ class CustomerController extends Controller
 
         $this->customerRepository = $customerRepository;
         $this->productReviewRepository = $productReviewRepository;
-
-        parent::__construct();
     }
 
     /**

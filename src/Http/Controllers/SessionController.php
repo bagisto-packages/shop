@@ -2,8 +2,8 @@
 
 namespace BagistoPackages\Shop\Http\Controllers;
 
-use Illuminate\Support\Facades\Event;
 use Cookie;
+use Illuminate\Support\Facades\Event;
 
 class SessionController extends Controller
 {
@@ -15,8 +15,6 @@ class SessionController extends Controller
     public function __construct()
     {
         $this->middleware('customer')->except(['show', 'create']);
-
-        parent::__construct();
     }
 
     /**

@@ -22,8 +22,6 @@ class HomeController extends Controller
     public function __construct(SearchRepository $searchRepository)
     {
         $this->searchRepository = $searchRepository;
-
-        parent::__construct();
     }
 
     /**

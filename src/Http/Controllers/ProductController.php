@@ -58,8 +58,6 @@ class ProductController extends Controller
         $this->productAttributeValueRepository = $productAttributeValueRepository;
         $this->productDownloadableSampleRepository = $productDownloadableSampleRepository;
         $this->productDownloadableLinkRepository = $productDownloadableLinkRepository;
-
-        parent::__construct();
     }
 
     /**

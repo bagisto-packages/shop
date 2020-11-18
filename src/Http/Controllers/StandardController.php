@@ -33,8 +33,6 @@ class StandardController extends Controller
     {
         $this->orderRepository = $orderRepository;
         $this->ipnHelper = $ipnHelper;
-
-        parent::__construct();
     }
 
     /**
@@ -44,7 +42,7 @@ class StandardController extends Controller
      */
     public function redirect()
     {
-        return view('paypal::standard-redirect');
+        return view('shop::standard-redirect');
     }
 
     /**

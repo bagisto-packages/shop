@@ -35,8 +35,6 @@ class ProductsCategoriesProxyController extends Controller
     {
         $this->categoryRepository = $categoryRepository;
         $this->productRepository = $productRepository;
-
-        parent::__construct();
     }
 
     /**

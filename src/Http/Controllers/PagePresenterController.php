@@ -22,8 +22,6 @@ class PagePresenterController extends Controller
     public function __construct(CmsRepository $cmsRepository)
     {
         $this->cmsRepository = $cmsRepository;
-
-        parent::__construct();
     }
 
     /**

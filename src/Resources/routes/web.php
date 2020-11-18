@@ -73,7 +73,6 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
             Route::get('wishlist/move/{id}', 'WishlistController@move')->name('customer.wishlist.move');
 
             Route::prefix('account')->group(function () {
-                Route::get('index', 'AccountController@index')->name('customer.account.index');
                 Route::get('profile', 'CustomerController@index')->name('customer.profile.index');
                 Route::get('profile/edit', 'CustomerController@edit')->name('customer.profile.edit');
                 Route::post('profile/edit', 'CustomerController@update')->name('customer.profile.store');

@@ -32,8 +32,6 @@ class ReviewController extends Controller
     {
         $this->productRepository = $productRepository;
         $this->productReviewRepository = $productReviewRepository;
-
-        parent::__construct();
     }
 
     /**

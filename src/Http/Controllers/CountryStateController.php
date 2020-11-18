@@ -32,8 +32,6 @@ class CountryStateController extends Controller
     {
         $this->countryRepository = $countryRepository;
         $this->countryStateRepository = $countryStateRepository;
-
-        parent::__construct();
     }
 
     /**

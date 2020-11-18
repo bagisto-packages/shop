@@ -41,8 +41,6 @@ class RegistrationController extends Controller
     {
         $this->customerRepository = $customerRepository;
         $this->customerGroupRepository = $customerGroupRepository;
-
-        parent::__construct();
     }
 
     /**
