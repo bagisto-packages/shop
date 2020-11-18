@@ -16,7 +16,7 @@
                         @if ($logo = core()->getCurrentChannel()->logo_url)
                             <img class="logo" src="{{ $logo }}" alt=""/>
                         @else
-                            <img class="logo" src="{{ bagisto_asset('images/logo.svg') }}" alt=""/>
+                            <img class="logo" src="{{ theme_asset('images/logo.svg') }}" alt=""/>
                         @endif
                     </a>
                 </li>

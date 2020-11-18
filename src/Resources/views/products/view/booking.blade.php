@@ -2,7 +2,7 @@
     @if ($bookingProduct = app('\BagistoPackages\Shop\Repositories\BookingProductRepository')->findOneByField('product_id', $product->product_id))
 
         @push('css')
-            <link rel="stylesheet" href="{{ bagisto_asset('css/default-booking.css') }}">
+            <link rel="stylesheet" href="{{ theme_asset('css/default-booking.css') }}">
         @endpush
 
         <booking-information></booking-information>

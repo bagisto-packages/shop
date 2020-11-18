@@ -9,12 +9,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="content-language" content="{{ app()->getLocale() }}">
     <link rel="stylesheet" href="{{ asset('vendor/packages/ui/assets/css/ui.css') }}">
-    <link rel="stylesheet" href="{{ bagisto_asset('css/shop.css') }}">
+    <link rel="stylesheet" href="{{ theme_asset('css/shop.css') }}">
 
     @if ($favicon = core()->getCurrentChannel()->favicon_url)
         <link rel="icon" sizes="16x16" href="{{ $favicon }}"/>
     @else
-        <link rel="icon" sizes="16x16" href="{{ bagisto_asset('images/favicon.ico') }}"/>
+        <link rel="icon" sizes="16x16" href="{{ theme_asset('images/favicon.ico') }}"/>
     @endif
 
     @yield('head')
@@ -103,7 +103,7 @@
     @endif
 </script>
 
-<script type="text/javascript" src="{{ bagisto_asset('js/shop.js') }}"></script>
+<script type="text/javascript" src="{{ theme_asset('js/shop.js') }}"></script>
 <script type="text/javascript" src="{{ asset('vendor/packages/ui/assets/js/ui.js') }}"></script>
 
 @stack('scripts')
