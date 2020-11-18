@@ -74,9 +74,6 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
         Models\CustomerGroup::class,
         Models\Wishlist::class,
 
-        Models\Admin::class,
-        Models\Role::class,
-
         Models\InventorySource::class,
 
         Models\TaxCategory::class,
@@ -152,7 +149,6 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
         );
 
         $router->aliasMiddleware('theme', Middleware\Theme::class);
-        $router->aliasMiddleware('admin', Middleware\Bouncer::class);
         $router->aliasMiddleware('locale', Middleware\Locale::class);
         $router->aliasMiddleware('currency', Middleware\Currency::class);
         $router->aliasMiddleware('customer', Middleware\RedirectIfNotCustomer::class);
@@ -168,10 +164,6 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
         Paginator::defaultSimpleView('shop::partials.pagination');
 
         Event::listen('bagisto.shop.layout.body.after', static function (ViewRenderEventManager $viewRenderEventManager) {
-            $viewRenderEventManager->addTemplate('shop::blade.tracer.style');
-        });
-
-        Event::listen('bagisto.admin.layout.head', static function (ViewRenderEventManager $viewRenderEventManager) {
             $viewRenderEventManager->addTemplate('shop::blade.tracer.style');
         });
 
@@ -210,7 +202,6 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
 
         $this->registerCore();
         $this->registerCart();
-        $this->registerBouncer();
         $this->registerPayment();
         $this->registerShipping();
 
@@ -306,16 +297,6 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
         });
 
         $this->app->bind('cart', \BagistoPackages\Shop\Cart::class);
-    }
-
-    protected function registerBouncer()
-    {
-        $loader = AliasLoader::getInstance();
-        $loader->alias('Bouncer', Facades\Bouncer::class);
-
-        $this->app->singleton('bouncer', function () {
-            return new \BagistoPackages\Shop\Bouncer();
-        });
     }
 
     protected function registerPayment()

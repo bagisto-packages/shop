@@ -26,8 +26,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AttributeGroupTableSeeder::class);
         $this->call(AttributeTableSeeder::class);
         $this->call(AttributeOptionTableSeeder::class);
-        $this->call(RolesTableSeeder::class);
-        $this->call(AdminsTableSeeder::class);
         $this->call(CustomerGroupTableSeeder::class);
         $this->call(CMSPagesTableSeeder::class);
     }

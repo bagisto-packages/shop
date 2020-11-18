@@ -13,18 +13,7 @@ class AddApiTokenColumns extends Migration
      */
     public function up()
     {
-        // @see https://laravel.com/docs/6.x/api-authentication#database-preparation
-
         Schema::table('customers', function ($table) {
-            $table
-                ->string('api_token', 80)
-                ->after('password')
-                ->unique()
-                ->nullable()
-                ->default(null);
-        });
-
-        Schema::table('admins', function ($table) {
             $table
                 ->string('api_token', 80)
                 ->after('password')
@@ -42,10 +31,6 @@ class AddApiTokenColumns extends Migration
     public function down()
     {
         Schema::table('customers', function (Blueprint $table) {
-            $table->dropColumn('api_token');
-        });
-
-        Schema::table('admins', function (Blueprint $table) {
             $table->dropColumn('api_token');
         });
     }

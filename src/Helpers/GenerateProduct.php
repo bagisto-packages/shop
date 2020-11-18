@@ -72,7 +72,7 @@ class GenerateProduct
 
         if (!AttributeOption::query()->where(['attribute_id' => $brand->id])->exists()) {
             AttributeOption::query()->create([
-                'admin_name' => 'BagistoPackages Demo Brand (c) 2020',
+                'admin_name' => 'Bagisto Demo Brand (c) 2020',
                 'attribute_id' => $brand->id,
             ]);
         }

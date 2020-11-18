@@ -2,7 +2,6 @@
 
 use BagistoPackages\Shop\Core;
 use BagistoPackages\Shop\Cart;
-use BagistoPackages\Shop\Bouncer;
 use BagistoPackages\Shop\Payment;
 use BagistoPackages\Shop\Shipping;
 use BagistoPackages\Ui\ViewRenderEventManager;
@@ -18,13 +17,6 @@ if (!function_exists('cart')) {
     function cart()
     {
         return app()->make(Cart::class);
-    }
-}
-
-if (!function_exists('bouncer')) {
-    function bouncer()
-    {
-        return app()->make(Bouncer::class);
     }
 }
 
