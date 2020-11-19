@@ -5,7 +5,7 @@ return [
 
     'themes' => [
         'default' => [
-            'views_path' => 'resources/themes/default/views',
+            'views_path' => 'resources/views/themes/default',
             'assets_path' => 'public/themes/default/assets',
             'name' => 'Default'
         ],
