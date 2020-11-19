@@ -18,7 +18,7 @@ Route::group(['middleware' => ['web']], function () {
 Route::get('paypal/standard/ipn', 'StandardController@ipn')->name('paypal.standard.ipn');
 
 Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function () {
-    Route::get('/booking-slots/{id}', 'Shop\BookingProductController@index')->name('booking_product.slots.index');
+    Route::get('/booking-slots/{id}', 'BookingProductController@index')->name('booking_product.slots.index');
 
     Route::get('/', 'HomeController@index')->name('home.index');
     Route::get('/subscribe', 'SubscriptionController@subscribe')->name('subscribe');
