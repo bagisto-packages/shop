@@ -330,7 +330,7 @@ class Booking
     }
 
     /**
-     * @param \BagistoPackages\Ceckout\Contracts\CartItem|array $cartItem
+     * @param \BagistoPackages\Shop\Contracts\CartItem|array $cartItem
      * @return bool
      */
     public function isItemHaveQuantity($cartItem)
@@ -360,7 +360,7 @@ class Booking
     }
 
     /**
-     * @param \BagistoPackages\Ceckout\Contracts\CartItem|array $cartItem
+     * @param \BagistoPackages\Shop\Contracts\CartItem|array $cartItem
      * @return bool
      */
     public function isSlotExpired($cartItem)
