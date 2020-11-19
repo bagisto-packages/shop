@@ -1,5 +1,4 @@
 @component('shop::emails.layouts.master')
-
     <div>
         <div style="text-align: center;">
             <a href="{{ config('app.url') }}">
@@ -22,5 +21,4 @@
             </a>
         </div>
     </div>
-
 @endcomponent
