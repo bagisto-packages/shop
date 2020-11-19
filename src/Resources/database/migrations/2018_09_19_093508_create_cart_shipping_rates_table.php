@@ -26,8 +26,6 @@ class CreateCartShippingRatesTable extends Migration
             $table->decimal('base_discount_amount', 12, 4)->default(0);
             $table->integer('cart_address_id')->nullable()->unsigned();
             $table->timestamps();
-
-            $table->foreign('cart_address_id')->references('id')->on('cart_address')->onDelete('cascade');
         });
     }
 

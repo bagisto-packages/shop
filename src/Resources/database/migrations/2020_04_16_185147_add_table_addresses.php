@@ -40,6 +40,10 @@ class AddTableAddresses extends Migration
             $table->foreign(['order_id'])->references('id')->on('orders')->onDelete('cascade');
             $table->foreign(['customer_id'])->references('id')->on('customers')->onDelete('cascade');
         });
+
+        Schema::table('cart_shipping_rates', function (Blueprint $table) {
+            $table->foreign('cart_address_id')->references('id')->on('addresses')->onDelete('cascade');
+        });
     }
 
     /**
