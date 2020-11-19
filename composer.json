@@ -24,7 +24,7 @@
         ],
         "psr-4": {
             "BagistoPackages\\Shop\\": "src/",
-            "BagistoPackages\\Shop\\Seeds\\": "src/Resources/database/seeds"
+            "BagistoPackages\\Shop\\Seeds\\": "src/resources/database/seeds"
         }
     },
     "config": {

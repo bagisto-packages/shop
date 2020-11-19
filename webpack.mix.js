@@ -8,10 +8,10 @@ mix.disableNotifications();
 mix.setPublicPath(publicPath).mergeManifest();
 
 mix
-    .js([__dirname + "/src/Resources/assets/js/app.js"], "js/shop.js")
-    .copy(__dirname + "/src/Resources/assets/images", publicPath + "/images")
-    .sass(__dirname + "/src/Resources/assets/sass/app.scss", "css/shop.css")
-    .sass(__dirname + "/src/Resources/assets/sass/default.scss", "css/default-booking.css")
+    .js([__dirname + "/src/resources/assets/js/app.js"], "js/shop.js")
+    .copy(__dirname + "/src/resources/assets/images", publicPath + "/images")
+    .sass(__dirname + "/src/resources/assets/sass/app.scss", "css/shop.css")
+    .sass(__dirname + "/src/resources/assets/sass/default.scss", "css/default-booking.css")
     .options({
         processCssUrls: false
     });

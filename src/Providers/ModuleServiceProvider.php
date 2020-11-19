@@ -177,18 +177,18 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
         Event::listen('catalog.product.create.after', 'BagistoPackages\Shop\Listeners\ProductFlat@afterProductCreatedUpdated');
         Event::listen('catalog.product.update.after', 'BagistoPackages\Shop\Listeners\ProductFlat@afterProductCreatedUpdated');
 
-        $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'shop');
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'shop');
 
         $this->composeView();
 
         $this->publishes([
-            __DIR__ . '/../Resources/config/imagecache.php' => config_path('imagecache.php'),
-            __DIR__ . '/../Resources/config/themes.php' => config_path('themes.php'),
+            __DIR__ . '/../resources/config/imagecache.php' => config_path('imagecache.php'),
+            __DIR__ . '/../resources/config/themes.php' => config_path('themes.php'),
         ]);
 
         $this->publishes([
-            __DIR__ . '/../Resources/views' => resource_path('views/themes/default'),
-            __DIR__ . '/../Resources/lang' => resource_path('lang/vendor/shop'),
+            __DIR__ . '/../resources/views' => resource_path('views/themes/default'),
+            __DIR__ . '/../resources/lang' => resource_path('lang/vendor/shop'),
         ]);
 
         $this->publishes([
@@ -213,7 +213,7 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
 
     protected function registerRoutes($routes): void
     {
-        $path = __DIR__ . '/../Resources/routes';
+        $path = __DIR__ . '/../resources/routes';
 
         $routeFiles = collect(File::glob($path . '/*.php'))
             ->map(function ($file) {
@@ -248,13 +248,13 @@ class ModuleServiceProvider extends BaseBoxServiceProvider
 
     protected function registerConfig()
     {
-        $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/core.php', 'core');
-        $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/themes.php', 'themes');
-        $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/carriers.php', 'carriers');
-        $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/menu.php', 'menu.customer');
-        $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/imagecache.php', 'imagecache');
-        $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/productTypes.php', 'product_types');
-        $this->mergeConfigFrom(dirname(__DIR__) . '/Resources/config/paymentMethods.php', 'paymentmethods');
+        $this->mergeConfigFrom(dirname(__DIR__) . '/resources/config/core.php', 'core');
+        $this->mergeConfigFrom(dirname(__DIR__) . '/resources/config/themes.php', 'themes');
+        $this->mergeConfigFrom(dirname(__DIR__) . '/resources/config/carriers.php', 'carriers');
+        $this->mergeConfigFrom(dirname(__DIR__) . '/resources/config/menu.php', 'menu.customer');
+        $this->mergeConfigFrom(dirname(__DIR__) . '/resources/config/imagecache.php', 'imagecache');
+        $this->mergeConfigFrom(dirname(__DIR__) . '/resources/config/productTypes.php', 'product_types');
+        $this->mergeConfigFrom(dirname(__DIR__) . '/resources/config/paymentMethods.php', 'paymentmethods');
     }
 
     protected function registerCommands()
