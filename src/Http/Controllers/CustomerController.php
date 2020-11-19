@@ -147,13 +147,13 @@ class CustomerController extends Controller
                 $orders = $customerRepository->all_orders->whereIn('status', ['pending', 'processing'])->first();
 
                 if ($orders) {
-                    session()->flash('error', trans('admin::app.response.order-pending', ['name' => 'Customer']));
+                    session()->flash('error', trans('shop::app.response.order-pending', ['name' => 'Customer']));
 
                     return redirect()->route('shop.customer.profile.index');
                 } else {
                     $this->customerRepository->delete($id);
 
-                    session()->flash('success', trans('admin::app.response.delete-success', ['name' => 'Customer']));
+                    session()->flash('success', trans('shop::app.response.delete-success', ['name' => 'Customer']));
 
                     return redirect()->route('shop.customer.session.index');
                 }
@@ -163,7 +163,7 @@ class CustomerController extends Controller
                 return redirect()->back();
             }
         } catch (\Exception $e) {
-            session()->flash('error', trans('admin::app.response.delete-failed', ['name' => 'Customer']));
+            session()->flash('error', trans('shop::app.response.delete-failed', ['name' => 'Customer']));
 
             return redirect()->route('shop.customer.profile.index');
         }

@@ -43,7 +43,7 @@
 
                     <div class="control-group" :class="[errors.has('rating') ? 'has-error' : '']">
                         <label for="title" class="required">
-                            {{ __('admin::app.customers.reviews.rating') }}
+                            {{ __('shop::app.customers.reviews.rating') }}
                         </label>
 
                         <div class="stars">
@@ -81,7 +81,7 @@
 
                     <div class="control-group" :class="[errors.has('comment') ? 'has-error' : '']">
                         <label for="comment" class="required">
-                            {{ __('admin::app.customers.reviews.comment') }}
+                            {{ __('shop::app.customers.reviews.comment') }}
                         </label>
                         <textarea type="text" class="control" name="comment" v-validate="'required'"
                                   value="{{ old('comment') }}">

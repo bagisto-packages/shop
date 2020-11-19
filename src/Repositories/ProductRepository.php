@@ -515,7 +515,7 @@ class ProductRepository extends Repository
         $this->fillOriginalProduct($originalProduct);
 
         if (!$originalProduct->getTypeInstance()->canBeCopied()) {
-            throw new Exception(trans('admin::app.response.product-can-not-be-copied', ['type' => $originalProduct->type]));
+            throw new Exception(trans('shop::app.response.product-can-not-be-copied', ['type' => $originalProduct->type]));
         }
 
         DB::beginTransaction();
@@ -648,7 +648,7 @@ class ProductRepository extends Repository
 
             // change name of copied product
             if ($oldValue->attribute_id === $attributeIds['name']) {
-                $copyOf = trans('admin::app.copy-of');
+                $copyOf = trans('shop::app.copy-of');
                 $copiedName = sprintf('%s%s (%s)',
                     Str::startsWith($originalProduct->name, $copyOf) ? '' : $copyOf,
                     $originalProduct->name,
@@ -660,7 +660,7 @@ class ProductRepository extends Repository
 
             // change url_key of copied product
             if ($oldValue->attribute_id === $attributeIds['url_key']) {
-                $copyOfSlug = trans('admin::app.copy-of-slug');
+                $copyOfSlug = trans('shop::app.copy-of-slug');
                 $copiedSlug = sprintf('%s%s-%s',
                     Str::startsWith($originalProduct->url_key, $copyOfSlug) ? '' : $copyOfSlug,
                     $originalProduct->url_key,
@@ -678,7 +678,7 @@ class ProductRepository extends Repository
 
             // change product number
             if ($oldValue->attribute_id === $attributeIds['product_number']) {
-                $copyProductNumber = trans('admin::app.copy-of-slug');
+                $copyProductNumber = trans('shop::app.copy-of-slug');
                 $copiedProductNumber = sprintf('%s%s-%s',
                     Str::startsWith($originalProduct->product_number, $copyProductNumber) ? '' : $copyProductNumber,
                     $originalProduct->product_number,

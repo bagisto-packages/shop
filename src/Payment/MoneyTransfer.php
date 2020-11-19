@@ -28,7 +28,7 @@ class MoneyTransfer extends Payment
         }
 
         return [
-            'title' => trans('admin::app.admin.system.mailing-address'),
+            'title' => trans('shop::app.system.mailing-address'),
             'value' => $this->getConfigData('mailing_address'),
         ];
     }

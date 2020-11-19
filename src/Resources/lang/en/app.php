@@ -1,72 +1,12 @@
 <?php
 
 return [
+    'copy-of' => 'Copy of ',
+    'copy-of-slug' => 'copy-of-',
 
-    'admin' => [
-        'catalog' => [
-            'products' => [
-                'booking' => 'Booking Information',
-                'booking-type' => 'Booking Type',
-                'default' => 'Default',
-                'appointment-booking' => 'Appointment Booking',
-                'event-booking' => 'Event Booking',
-                'rental-booking' => 'Rental Booking',
-                'table-booking' => 'Table Booking',
-                'slot-duration' => 'Slot Duration (Mins)',
-                'break-time' => 'Break Time b/w Slots (Mins)',
-                'available-every-week' => 'Available Every Week',
-                'yes' => 'Yes',
-                'no' => 'No',
-                'available-from' => 'Available From',
-                'available-to' => 'Available To',
-                'same-slot-all-days' => 'Same Slot All Days',
-                'slot-has-quantity' => 'Slot has Quantity',
-                'slots' => 'Slots',
-                'from' => 'From',
-                'to' => 'To',
-                'qty' => 'Qty',
-                'add-slot' => 'Add Slot',
-                'sunday' => 'Sunday',
-                'monday' => 'Monday',
-                'tuesday' => 'Tuesday',
-                'wednesday' => 'Wednesday',
-                'thursday' => 'Thursday',
-                'friday' => 'Friday',
-                'saturday' => 'Saturday',
-                'renting-type' => 'Renting Type',
-                'daily' => 'Daily Basis',
-                'hourly' => 'Hourly Basis',
-                'daily-hourly' => 'Both (Daily and Hourly Basis)',
-                'daily-price' => 'Daily Price',
-                'hourly-price' => 'Hourly Price',
-                'location' => 'Location',
-                'show-location' => 'Show Location',
-                'event-start-date' => 'Event Start Date',
-                'event-end-date' => 'Event End Date',
-                'tickets' => 'Tickets',
-                'add-ticket' => 'Add Ticket',
-                'name' => 'Name',
-                'price' => 'Price',
-                'quantity' => 'Quantity',
-                'description' => 'Description',
-                'special-price' => 'Special Price',
-                'special-price-from' => 'Valid From',
-                'special-price-to' => 'Valid Until',
-                'charged-per' => 'Charged Per',
-                'guest' => 'Guest',
-                'table' => 'Table',
-                'prevent-scheduling-before' => 'Prevent Scheduling Before',
-                'guest-limit' => 'Guest Limit Per Table',
-                'guest-capacity' => 'Guest Capacity',
-                'type' => 'Type',
-                'many-bookings-for-one-day' => 'Many Bookings for One Day',
-                'one-booking-for-many-days' => 'One Booking for Many Days',
-                'day' => 'Day',
-                'status' => 'Status',
-                'open' => 'Open',
-                'close' => 'Close'
-            ]
-        ]
+    'system' => [
+        'instructions' => 'Instructions',
+        'mailing-address' => 'Send Check to',
     ],
 
     'path-hint' => [
@@ -88,6 +28,283 @@ return [
     'forget_password' => [
         'reset_link_sent' => 'We have e-mailed your reset password link.',
         'email_not_exist' => "We can't find a user with that e-mail address"
+    ],
+
+    'invalid_vat_format' => 'The given vat id has a wrong format',
+    'security-warning' => 'Suspicious activity found!!!',
+    'nothing-to-delete' => 'Nothing to delete',
+
+    'layouts' => [
+        'my-account' => 'My Account',
+        'profile' => 'Profile',
+        'address' => 'Address',
+        'reviews' => 'Reviews',
+        'wishlist' => 'Wishlist',
+        'orders' => 'Orders',
+        'downloadable-products' => 'Downloadable Products'
+    ],
+
+    'common' => [
+        'error' => 'Something went wrong, please try again later.',
+        'image-upload-limit' => 'Image max upload size is 2MB',
+        'no-result-found' => 'We could not find any records.'
+    ],
+
+    'home' => [
+        'page-title' => config('app.name') . ' - Home',
+        'featured-products' => 'Featured Products',
+        'new-products' => 'New Products',
+        'verify-email' => 'Verify your email account',
+        'resend-verify-email' => 'Resend Verification Email'
+    ],
+
+    'minicart' => [
+        'view-cart' => 'View Shopping Cart',
+        'checkout' => 'Checkout',
+        'cart' => 'Cart',
+        'zero' => '0'
+    ],
+
+    'buynow' => [
+        'no-options' => 'Please select options before buying this product.'
+    ],
+
+    'footer' => [
+        'subscribe-newsletter' => 'Subscribe Newsletter',
+        'subscribe' => 'Subscribe',
+        'locale' => 'Locale',
+        'currency' => 'Currency',
+        'copy-right' => '© Copyright :year, All rights reserved',
+    ],
+
+    'subscription' => [
+        'unsubscribe' => 'Unsubcribe',
+        'subscribe' => 'Subscribe',
+        'subscribed' => 'You are now subscribed to subscription emails.',
+        'not-subscribed' => 'You can not be subscribed to subscription emails, please try again later.',
+        'already' => 'You are already subscribed to our subscription list.',
+        'unsubscribed' => 'You are unsubscribed from subscription mails.',
+        'already-unsub' => 'You are already unsubscribed.',
+    ],
+
+    'checkout' => [
+        'cart' => [
+            'integrity' => [
+                'missing_fields' => 'Some required fields missing for this product.',
+                'missing_options' => 'Options are missing for this product.',
+                'missing_links' => 'Downloadable links are missing for this product.',
+                'qty_missing' => 'Atleast one product should have more than 1 quantity.',
+                'qty_impossible' => 'Cannot add more than one of these products to cart.'
+            ],
+            'create-error' => 'Encountered some issue while making cart instance.',
+            'title' => 'Shopping Cart',
+            'empty' => 'Your shopping cart is empty',
+            'update-cart' => 'Update Cart',
+            'continue-shopping' => 'Continue Shopping',
+            'proceed-to-checkout' => 'Proceed To Checkout',
+            'remove' => 'Remove',
+            'remove-link' => 'Remove',
+            'move-to-wishlist' => 'Move to Wishlist',
+            'move-to-wishlist-success' => 'Item moved to wishlist successfully.',
+            'move-to-wishlist-error' => 'Cannot move item to wishlist, please try again later.',
+            'add-config-warning' => 'Please select option before adding to cart.',
+            'quantity' => [
+                'quantity' => 'Quantity',
+                'success' => 'Cart Item(s) successfully updated.',
+                'illegal' => 'Quantity cannot be lesser than one.',
+                'inventory_warning' => 'The requested quantity is not available, please try again later.',
+                'error' => 'Cannot update the item(s) at the moment, please try again later.'
+            ],
+
+            'item' => [
+                'error_remove' => 'No items to remove from the cart.',
+                'success' => 'Item was successfully added to cart.',
+                'success-remove' => 'Item was removed successfully from the cart.',
+                'error-add' => 'Item cannot be added to cart, please try again later.',
+                'inactive' => 'An item is inactive and was removed from cart.',
+                'inactive-add' => 'Inactive item cannot be added to cart.',
+            ],
+            'quantity-error' => 'Requested quantity is not available.',
+            'cart-subtotal' => 'Cart Subtotal',
+            'cart-remove-action' => 'Do you really want to do this ?',
+            'partial-cart-update' => 'Only some of the product(s) were updated',
+            'link-missing' => '',
+            'event' => [
+                'expired' => 'This event has been expired.'
+            ],
+            'minimum-order-message' => 'Your order should be greater than :amount'
+        ],
+
+        'onepage' => [
+            'title' => 'Checkout',
+            'information' => 'Information',
+            'shipping' => 'Shipping',
+            'payment' => 'Payment',
+            'complete' => 'Complete',
+            'review' => 'Review',
+            'sign-in' => 'Sign In',
+            'company-name' => 'Company Name',
+            'first-name' => 'First Name',
+            'last-name' => 'Last Name',
+            'email' => 'Email',
+            'address1' => 'Street Address',
+            'city' => 'City',
+            'state' => 'State',
+            'select-state' => 'Select a region, state or province',
+            'postcode' => 'Zip/Postcode',
+            'phone' => 'Telephone',
+            'country' => 'Country',
+            'order-summary' => 'Order Summary',
+            'use_for_shipping' => 'Ship to this address',
+            'continue' => 'Continue',
+            'shipping-method' => 'Select Shipping Method',
+            'payment-methods' => 'Select Payment Method',
+            'payment-method' => 'Payment Method',
+            'summary' => 'Order Summary',
+            'price' => 'Price',
+            'quantity' => 'Quantity',
+            'billing-address' => 'Billing Address',
+            'shipping-address' => 'Shipping Address',
+            'contact' => 'Contact',
+            'place-order' => 'Place Order',
+            'new-address' => 'Add New Address',
+            'save_as_address' => 'Save this address',
+            'apply-coupon' => 'Apply Coupon',
+            'amt-payable' => 'Amount Payable',
+            'got' => 'Got',
+            'free' => 'Free',
+            'coupon-used' => 'Coupon Used',
+            'applied' => 'Applied',
+            'back' => 'Back',
+            'cash-desc' => 'Cash On Delivery',
+            'money-desc' => 'Money Transfer',
+            'paypal-desc' => 'Paypal Standard',
+            'free-desc' => 'This is a free shipping',
+            'flat-desc' => 'This is a flat rate',
+            'password' => 'Password',
+            'login-exist-message' => 'You already have an account with us, Sign in or continue as guest.',
+            'enter-coupon-code' => 'Enter Coupon Code'
+        ],
+
+        'total' => [
+            'order-summary' => 'Order Summary',
+            'sub-total' => 'Items',
+            'grand-total' => 'Grand Total',
+            'delivery-charges' => 'Delivery Charges',
+            'tax' => 'Tax',
+            'discount' => 'Discount',
+            'price' => 'price',
+            'disc-amount' => 'Amount discounted',
+            'new-grand-total' => 'New Grand Total',
+            'coupon' => 'Coupon',
+            'coupon-applied' => 'Applied Coupon',
+            'remove-coupon' => 'Remove Coupon',
+            'cannot-apply-coupon' => 'Cannot Apply Coupon',
+            'invalid-coupon' => 'Coupon code is invalid.',
+            'success-coupon' => 'Coupon code applied successfully.',
+            'coupon-apply-issue' => 'Coupon code can\'t be applied.'
+        ],
+
+        'success' => [
+            'title' => 'Order successfully placed',
+            'thanks' => 'Thank you for your order!',
+            'order-id-info' => 'Your order id is #:order_id',
+            'info' => 'We will email you, your order details and tracking information'
+        ]
+    ],
+
+    'products' => [
+        'layered-nav-title' => 'Shop By',
+        'price-label' => 'As low as',
+        'remove-filter-link-title' => 'Clear All',
+        'filter-to' => 'to',
+        'sort-by' => 'Sort By',
+        'from-a-z' => 'From A-Z',
+        'from-z-a' => 'From Z-A',
+        'newest-first' => 'Newest First',
+        'oldest-first' => 'Oldest First',
+        'cheapest-first' => 'Cheapest First',
+        'expensive-first' => 'Expensive First',
+        'show' => 'Show',
+        'pager-info' => 'Showing :showing of :total Items',
+        'description' => 'Description',
+        'specification' => 'Specification',
+        'total-reviews' => ':total Reviews',
+        'total-rating' => ':total_rating Ratings & :total_reviews Reviews',
+        'by' => 'By :name',
+        'up-sell-title' => 'We found other products you might like!',
+        'related-product-title' => 'Related Products',
+        'cross-sell-title' => 'More choices',
+        'reviews-title' => 'Ratings & Reviews',
+        'write-review-btn' => 'Write Review',
+        'choose-option' => 'Choose an option',
+        'sale' => 'Sale',
+        'new' => 'New',
+        'empty' => 'No products available in this category',
+        'add-to-cart' => 'Add To Cart',
+        'book-now' => 'Book Now',
+        'buy-now' => 'Buy Now',
+        'whoops' => 'Whoops!',
+        'quantity' => 'Quantity',
+        'in-stock' => 'In Stock',
+        'out-of-stock' => 'Out Of Stock',
+        'view-all' => 'View All',
+        'select-above-options' => 'Please select above options first.',
+        'less-quantity' => 'Quantity can not be less than one.',
+        'samples' => 'Samples',
+        'links' => 'Links',
+        'sample' => 'Sample',
+        'name' => 'Name',
+        'qty' => 'Qty',
+        'starting-at' => 'Starting at',
+        'customize-options' => 'Customize Options',
+        'choose-selection' => 'Choose a selection',
+        'your-customization' => 'Your Customization',
+        'total-amount' => 'Total Amount',
+        'none' => 'None',
+        'available-for-order' => 'Available for Order',
+        'settings' => 'Settings',
+        'compare_options' => 'Compare Options',
+        'wishlist-options' => 'Wishlist Options'
+    ],
+
+    'reviews' => [
+        'title' => 'Title',
+        'add-review-page-title' => 'Add Review',
+        'write-review' => 'Write a review',
+        'review-title' => 'Give your review a title',
+        'product-review-page-title' => 'Product Review',
+        'rating-reviews' => 'Rating & Reviews',
+        'submit' => 'SUBMIT',
+        'delete-all' => 'All Reviews has deleted Succesfully',
+        'ratingreviews' => ':rating Ratings & :review Reviews',
+        'star' => 'Star',
+        'percentage' => ':percentage %',
+        'id-star' => 'star',
+        'name' => 'Name',
+        'empty' => 'You have not reviewed any of product yet',
+    ],
+
+    'search' => [
+        'no-results' => 'No Results Found',
+        'page-title' => config('app.name') . ' - Search',
+        'found-results' => 'Search Results Found',
+        'found-result' => 'Search Result Found',
+        'analysed-keywords' => 'Analysed Keywords',
+        'image-search-option' => 'Image Search Option'
+    ],
+
+    'header' => [
+        'title' => 'Account',
+        'dropdown-text' => 'Manage Cart, Orders & Wishlist',
+        'sign-in' => 'Sign In',
+        'sign-up' => 'Sign Up',
+        'account' => 'Account',
+        'cart' => 'Cart',
+        'profile' => 'Profile',
+        'wishlist' => 'Wishlist',
+        'logout' => 'Logout',
+        'search-text' => 'Search products here'
     ],
 
     'shop' => [
@@ -148,95 +365,138 @@ return [
         ]
     ],
 
-    'invalid_vat_format' => 'The given vat id has a wrong format',
-    'security-warning' => 'Suspicious activity found!!!',
-    'nothing-to-delete' => 'Nothing to delete',
+    'mail' => [
+        'order' => [
+            'subject' => 'New Order Confirmation',
+            'heading' => 'Order Confirmation!',
+            'dear' => 'Dear :customer_name',
+            'dear-admin' => 'Dear :admin_name',
+            'greeting' => 'Thanks for your Order :order_id placed on :created_at',
+            'greeting-admin' => 'Order Id :order_id placed on :created_at',
+            'summary' => 'Summary of Order',
+            'shipping-address' => 'Shipping Address',
+            'billing-address' => 'Billing Address',
+            'contact' => 'Contact',
+            'shipping' => 'Shipping Method',
+            'payment' => 'Payment Method',
+            'price' => 'Price',
+            'quantity' => 'Quantity',
+            'subtotal' => 'Subtotal',
+            'shipping-handling' => 'Shipping & Handling',
+            'tax' => 'Tax',
+            'discount' => 'Discount',
+            'grand-total' => 'Grand Total',
+            'final-summary' => 'Thanks for showing your interest in our store we will send you tracking number once it shipped',
+            'help' => 'If you need any kind of help please contact us at :support_email',
+            'thanks' => 'Thanks!',
 
-    'layouts' => [
-        'my-account' => 'My Account',
-        'profile' => 'Profile',
-        'address' => 'Address',
-        'reviews' => 'Reviews',
-        'wishlist' => 'Wishlist',
-        'orders' => 'Orders',
-        'downloadable-products' => 'Downloadable Products'
-    ],
+            'comment' => [
+                'subject' => 'New comment added to your order #:order_id',
+                'dear' => 'Dear :customer_name',
+                'final-summary' => 'Thanks for showing your interest in our store',
+                'help' => 'If you need any kind of help please contact us at :support_email',
+                'thanks' => 'Thanks!',
+            ],
 
-    'common' => [
-        'error' => 'Something went wrong, please try again later.',
-        'image-upload-limit' => 'Image max upload size is 2MB',
-        'no-result-found' => 'We could not find any records.'
-    ],
+            'cancel' => [
+                'subject' => 'Order Cancel Confirmation',
+                'heading' => 'Order Cancelled',
+                'dear' => 'Dear :customer_name',
+                'greeting' => 'Your Order with order id :order_id placed on :created_at has been cancelled',
+                'summary' => 'Summary of Order',
+                'shipping-address' => 'Shipping Address',
+                'billing-address' => 'Billing Address',
+                'contact' => 'Contact',
+                'shipping' => 'Shipping Method',
+                'payment' => 'Payment Method',
+                'subtotal' => 'Subtotal',
+                'shipping-handling' => 'Shipping & Handling',
+                'tax' => 'Tax',
+                'discount' => 'Discount',
+                'grand-total' => 'Grand Total',
+                'final-summary' => 'Thanks for showing your interest in our store',
+                'help' => 'If you need any kind of help please contact us at :support_email',
+                'thanks' => 'Thanks!',
+            ]
+        ],
 
-    'home' => [
-        'page-title' => config('app.name') . ' - Home',
-        'featured-products' => 'Featured Products',
-        'new-products' => 'New Products',
-        'verify-email' => 'Verify your email account',
-        'resend-verify-email' => 'Resend Verification Email'
-    ],
+        'invoice' => [
+            'heading' => 'Your invoice #:invoice_id for Order #:order_id',
+            'subject' => 'Invoice for your order #:order_id',
+            'summary' => 'Summary of Invoice',
+        ],
 
-    'header' => [
-        'title' => 'Account',
-        'dropdown-text' => 'Manage Cart, Orders & Wishlist',
-        'sign-in' => 'Sign In',
-        'sign-up' => 'Sign Up',
-        'account' => 'Account',
-        'cart' => 'Cart',
-        'profile' => 'Profile',
-        'wishlist' => 'Wishlist',
-        'logout' => 'Logout',
-        'search-text' => 'Search products here'
-    ],
+        'shipment' => [
+            'heading' => 'Shipment #:shipment_id  has been generated for Order #:order_id',
+            'inventory-heading' => 'New shipment #:shipment_id has been generated for Order #:order_id',
+            'subject' => 'Shipment for your order #:order_id',
+            'inventory-subject' => 'New shipment has been generated for Order #:order_id',
+            'summary' => 'Summary of Shipment',
+            'carrier' => 'Carrier',
+            'tracking-number' => 'Tracking Number',
+            'greeting' => 'An order :order_id has been placed on :created_at',
+        ],
 
-    'minicart' => [
-        'view-cart' => 'View Shopping Cart',
-        'checkout' => 'Checkout',
-        'cart' => 'Cart',
-        'zero' => '0'
-    ],
+        'refund' => [
+            'heading' => 'Your Refund #:refund_id for Order #:order_id',
+            'subject' => 'Refund for your order #:order_id',
+            'summary' => 'Summary of Refund',
+            'adjustment-refund' => 'Adjustment Refund',
+            'adjustment-fee' => 'Adjustment Fee'
+        ],
 
-    'footer' => [
-        'subscribe-newsletter' => 'Subscribe Newsletter',
-        'subscribe' => 'Subscribe',
-        'locale' => 'Locale',
-        'currency' => 'Currency',
-    ],
+        'forget-password' => [
+            'subject' => 'Customer Reset Password',
+            'dear' => 'Dear :name',
+            'info' => 'You are receiving this email because we received a password reset request for your account',
+            'reset-password' => 'Reset Password',
+            'final-summary' => 'If you did not request a password reset, no further action is required',
+            'thanks' => 'Thanks!'
+        ],
 
-    'subscription' => [
-        'unsubscribe' => 'Unsubcribe',
-        'subscribe' => 'Subscribe',
-        'subscribed' => 'You are now subscribed to subscription emails.',
-        'not-subscribed' => 'You can not be subscribed to subscription emails, please try again later.',
-        'already' => 'You are already subscribed to our subscription list.',
-        'unsubscribed' => 'You are unsubscribed from subscription mails.',
-        'already-unsub' => 'You are already unsubscribed.',
-    ],
+        'update-password' => [
+            'subject' => 'Password Updated',
+            'dear' => 'Dear :name',
+            'info' => 'You are receiving this email because you have updated your password.',
+            'thanks' => 'Thanks!'
+        ],
 
-    'search' => [
-        'no-results' => 'No Results Found',
-        'page-title' => config('app.name') . ' - Search',
-        'found-results' => 'Search Results Found',
-        'found-result' => 'Search Result Found',
-        'analysed-keywords' => 'Analysed Keywords',
-        'image-search-option' => 'Image Search Option'
-    ],
+        'customer' => [
+            'new' => [
+                'dear' => 'Dear :customer_name',
+                'username-email' => 'UserName/Email',
+                'subject' => 'New Customer Registration',
+                'password' => 'Password',
+                'summary' => 'Your account has been created.
+                Your account details are below: ',
+                'thanks' => 'Thanks!',
+            ],
 
-    'reviews' => [
-        'title' => 'Title',
-        'add-review-page-title' => 'Add Review',
-        'write-review' => 'Write a review',
-        'review-title' => 'Give your review a title',
-        'product-review-page-title' => 'Product Review',
-        'rating-reviews' => 'Rating & Reviews',
-        'submit' => 'SUBMIT',
-        'delete-all' => 'All Reviews has deleted Succesfully',
-        'ratingreviews' => ':rating Ratings & :review Reviews',
-        'star' => 'Star',
-        'percentage' => ':percentage %',
-        'id-star' => 'star',
-        'name' => 'Name',
-        'empty' => 'You have not reviewed any of product yet',
+            'registration' => [
+                'subject' => 'New Customer Registration',
+                'customer-registration' => 'Customer Registered Successfully',
+                'dear' => 'Dear :customer_name',
+                'greeting' => 'Welcome and thank you for registering with us!',
+                'summary' => 'Your account has now been created successfully and you can login using your email address and password credentials. Upon logging in, you will be able to access other services including reviewing past orders, wishlists and editing your account information.',
+                'thanks' => 'Thanks!',
+            ],
+
+            'verification' => [
+                'heading' => config('app.name') . ' - Email Verification',
+                'subject' => 'Verification Mail',
+                'verify' => 'Verify Your Account',
+                'summary' => 'This is the mail to verify that the email address you entered is yours.
+                Kindly click the Verify Your Account button below to verify your account.'
+            ],
+
+            'subscription' => [
+                'subject' => 'Subscription Email',
+                'greeting' => ' Welcome to ' . config('app.name') . ' - Email Subscription',
+                'unsubscribe' => 'Unsubscribe',
+                'summary' => 'Thanks for putting me into your inbox. It’s been a while since you’ve read ' . config('app.name') . ' email, and we don’t want to overwhelm your inbox. If you still do not want to receive
+                the latest email marketing news then for sure click the button below.'
+            ]
+        ]
     ],
 
     'customer' => [
@@ -536,333 +796,62 @@ return [
         ]
     ],
 
-    'products' => [
-        'layered-nav-title' => 'Shop By',
-        'price-label' => 'As low as',
-        'remove-filter-link-title' => 'Clear All',
-        'filter-to' => 'to',
-        'sort-by' => 'Sort By',
-        'from-a-z' => 'From A-Z',
-        'from-z-a' => 'From Z-A',
-        'newest-first' => 'Newest First',
-        'oldest-first' => 'Oldest First',
-        'cheapest-first' => 'Cheapest First',
-        'expensive-first' => 'Expensive First',
-        'show' => 'Show',
-        'pager-info' => 'Showing :showing of :total Items',
-        'description' => 'Description',
-        'specification' => 'Specification',
-        'total-reviews' => ':total Reviews',
-        'total-rating' => ':total_rating Ratings & :total_reviews Reviews',
-        'by' => 'By :name',
-        'up-sell-title' => 'We found other products you might like!',
-        'related-product-title' => 'Related Products',
-        'cross-sell-title' => 'More choices',
-        'reviews-title' => 'Ratings & Reviews',
-        'write-review-btn' => 'Write Review',
-        'choose-option' => 'Choose an option',
-        'sale' => 'Sale',
-        'new' => 'New',
-        'empty' => 'No products available in this category',
-        'add-to-cart' => 'Add To Cart',
-        'book-now' => 'Book Now',
-        'buy-now' => 'Buy Now',
-        'whoops' => 'Whoops!',
-        'quantity' => 'Quantity',
-        'in-stock' => 'In Stock',
-        'out-of-stock' => 'Out Of Stock',
-        'view-all' => 'View All',
-        'select-above-options' => 'Please select above options first.',
-        'less-quantity' => 'Quantity can not be less than one.',
-        'samples' => 'Samples',
-        'links' => 'Links',
-        'sample' => 'Sample',
-        'name' => 'Name',
-        'qty' => 'Qty',
-        'starting-at' => 'Starting at',
-        'customize-options' => 'Customize Options',
-        'choose-selection' => 'Choose a selection',
-        'your-customization' => 'Your Customization',
-        'total-amount' => 'Total Amount',
-        'none' => 'None',
-        'available-for-order' => 'Available for Order',
-        'settings' => 'Settings',
-        'compare_options' => 'Compare Options',
-        'wishlist-options' => 'Wishlist Options'
-    ],
-
-    'buynow' => [
-        'no-options' => 'Please select options before buying this product.'
-    ],
-
-    'checkout' => [
-        'cart' => [
-            'integrity' => [
-                'missing_fields' => 'Some required fields missing for this product.',
-                'missing_options' => 'Options are missing for this product.',
-                'missing_links' => 'Downloadable links are missing for this product.',
-                'qty_missing' => 'Atleast one product should have more than 1 quantity.',
-                'qty_impossible' => 'Cannot add more than one of these products to cart.'
-            ],
-            'create-error' => 'Encountered some issue while making cart instance.',
-            'title' => 'Shopping Cart',
-            'empty' => 'Your shopping cart is empty',
-            'update-cart' => 'Update Cart',
-            'continue-shopping' => 'Continue Shopping',
-            'proceed-to-checkout' => 'Proceed To Checkout',
-            'remove' => 'Remove',
-            'remove-link' => 'Remove',
-            'move-to-wishlist' => 'Move to Wishlist',
-            'move-to-wishlist-success' => 'Item moved to wishlist successfully.',
-            'move-to-wishlist-error' => 'Cannot move item to wishlist, please try again later.',
-            'add-config-warning' => 'Please select option before adding to cart.',
-            'quantity' => [
-                'quantity' => 'Quantity',
-                'success' => 'Cart Item(s) successfully updated.',
-                'illegal' => 'Quantity cannot be lesser than one.',
-                'inventory_warning' => 'The requested quantity is not available, please try again later.',
-                'error' => 'Cannot update the item(s) at the moment, please try again later.'
-            ],
-
-            'item' => [
-                'error_remove' => 'No items to remove from the cart.',
-                'success' => 'Item was successfully added to cart.',
-                'success-remove' => 'Item was removed successfully from the cart.',
-                'error-add' => 'Item cannot be added to cart, please try again later.',
-                'inactive' => 'An item is inactive and was removed from cart.',
-                'inactive-add' => 'Inactive item cannot be added to cart.',
-            ],
-            'quantity-error' => 'Requested quantity is not available.',
-            'cart-subtotal' => 'Cart Subtotal',
-            'cart-remove-action' => 'Do you really want to do this ?',
-            'partial-cart-update' => 'Only some of the product(s) were updated',
-            'link-missing' => '',
-            'event' => [
-                'expired' => 'This event has been expired.'
-            ],
-            'minimum-order-message' => 'Your order should be greater than :amount'
-        ],
-
-        'onepage' => [
-            'title' => 'Checkout',
-            'information' => 'Information',
-            'shipping' => 'Shipping',
-            'payment' => 'Payment',
-            'complete' => 'Complete',
-            'review' => 'Review',
-            'sign-in' => 'Sign In',
-            'company-name' => 'Company Name',
-            'first-name' => 'First Name',
-            'last-name' => 'Last Name',
-            'email' => 'Email',
-            'address1' => 'Street Address',
-            'city' => 'City',
-            'state' => 'State',
-            'select-state' => 'Select a region, state or province',
-            'postcode' => 'Zip/Postcode',
-            'phone' => 'Telephone',
-            'country' => 'Country',
-            'order-summary' => 'Order Summary',
-            'use_for_shipping' => 'Ship to this address',
-            'continue' => 'Continue',
-            'shipping-method' => 'Select Shipping Method',
-            'payment-methods' => 'Select Payment Method',
-            'payment-method' => 'Payment Method',
-            'summary' => 'Order Summary',
-            'price' => 'Price',
-            'quantity' => 'Quantity',
-            'billing-address' => 'Billing Address',
-            'shipping-address' => 'Shipping Address',
-            'contact' => 'Contact',
-            'place-order' => 'Place Order',
-            'new-address' => 'Add New Address',
-            'save_as_address' => 'Save this address',
-            'apply-coupon' => 'Apply Coupon',
-            'amt-payable' => 'Amount Payable',
-            'got' => 'Got',
-            'free' => 'Free',
-            'coupon-used' => 'Coupon Used',
-            'applied' => 'Applied',
-            'back' => 'Back',
-            'cash-desc' => 'Cash On Delivery',
-            'money-desc' => 'Money Transfer',
-            'paypal-desc' => 'Paypal Standard',
-            'free-desc' => 'This is a free shipping',
-            'flat-desc' => 'This is a flat rate',
+    'users' => [
+        'sessions' => [
             'password' => 'Password',
-            'login-exist-message' => 'You already have an account with us, Sign in or continue as guest.',
-            'enter-coupon-code' => 'Enter Coupon Code'
         ],
-
-        'total' => [
-            'order-summary' => 'Order Summary',
-            'sub-total' => 'Items',
-            'grand-total' => 'Grand Total',
-            'delivery-charges' => 'Delivery Charges',
-            'tax' => 'Tax',
-            'discount' => 'Discount',
-            'price' => 'price',
-            'disc-amount' => 'Amount discounted',
-            'new-grand-total' => 'New Grand Total',
-            'coupon' => 'Coupon',
-            'coupon-applied' => 'Applied Coupon',
-            'remove-coupon' => 'Remove Coupon',
-            'cannot-apply-coupon' => 'Cannot Apply Coupon',
-            'invalid-coupon' => 'Coupon code is invalid.',
-            'success-coupon' => 'Coupon code applied successfully.',
-            'coupon-apply-issue' => 'Coupon code can\'t be applied.'
+        'users' => [
+            'password' => 'Password',
         ],
-
-        'success' => [
-            'title' => 'Order successfully placed',
-            'thanks' => 'Thank you for your order!',
-            'order-id-info' => 'Your order id is #:order_id',
-            'info' => 'We will email you, your order details and tracking information'
-        ]
     ],
 
-    'mail' => [
-        'order' => [
-            'subject' => 'New Order Confirmation',
-            'heading' => 'Order Confirmation!',
-            'dear' => 'Dear :customer_name',
-            'dear-admin' => 'Dear :admin_name',
-            'greeting' => 'Thanks for your Order :order_id placed on :created_at',
-            'greeting-admin' => 'Order Id :order_id placed on :created_at',
-            'summary' => 'Summary of Order',
-            'shipping-address' => 'Shipping Address',
-            'billing-address' => 'Billing Address',
-            'contact' => 'Contact',
-            'shipping' => 'Shipping Method',
-            'payment' => 'Payment Method',
-            'price' => 'Price',
-            'quantity' => 'Quantity',
-            'subtotal' => 'Subtotal',
-            'shipping-handling' => 'Shipping & Handling',
-            'tax' => 'Tax',
-            'discount' => 'Discount',
-            'grand-total' => 'Grand Total',
-            'final-summary' => 'Thanks for showing your interest in our store we will send you tracking number once it shipped',
-            'help' => 'If you need any kind of help please contact us at :support_email',
-            'thanks' => 'Thanks!',
-
-            'comment' => [
-                'subject' => 'New comment added to your order #:order_id',
-                'dear' => 'Dear :customer_name',
-                'final-summary' => 'Thanks for showing your interest in our store',
-                'help' => 'If you need any kind of help please contact us at :support_email',
-                'thanks' => 'Thanks!',
-            ],
-
-            'cancel' => [
-                'subject' => 'Order Cancel Confirmation',
-                'heading' => 'Order Cancelled',
-                'dear' => 'Dear :customer_name',
-                'greeting' => 'Your Order with order id :order_id placed on :created_at has been cancelled',
-                'summary' => 'Summary of Order',
-                'shipping-address' => 'Shipping Address',
-                'billing-address' => 'Billing Address',
-                'contact' => 'Contact',
-                'shipping' => 'Shipping Method',
-                'payment' => 'Payment Method',
-                'subtotal' => 'Subtotal',
-                'shipping-handling' => 'Shipping & Handling',
-                'tax' => 'Tax',
-                'discount' => 'Discount',
-                'grand-total' => 'Grand Total',
-                'final-summary' => 'Thanks for showing your interest in our store',
-                'help' => 'If you need any kind of help please contact us at :support_email',
-                'thanks' => 'Thanks!',
-            ]
+    'customers' => [
+        'reviews' => [
+            'rating' => 'Rating',
+            'comment' => 'Comment',
         ],
-
-        'invoice' => [
-            'heading' => 'Your invoice #:invoice_id for Order #:order_id',
-            'subject' => 'Invoice for your order #:order_id',
-            'summary' => 'Summary of Invoice',
-        ],
-
-        'shipment' => [
-            'heading' => 'Shipment #:shipment_id  has been generated for Order #:order_id',
-            'inventory-heading' => 'New shipment #:shipment_id has been generated for Order #:order_id',
-            'subject' => 'Shipment for your order #:order_id',
-            'inventory-subject' => 'New shipment has been generated for Order #:order_id',
-            'summary' => 'Summary of Shipment',
-            'carrier' => 'Carrier',
-            'tracking-number' => 'Tracking Number',
-            'greeting' => 'An order :order_id has been placed on :created_at',
-        ],
-
-        'refund' => [
-            'heading' => 'Your Refund #:refund_id for Order #:order_id',
-            'subject' => 'Refund for your order #:order_id',
-            'summary' => 'Summary of Refund',
-            'adjustment-refund' => 'Adjustment Refund',
-            'adjustment-fee' => 'Adjustment Fee'
-        ],
-
-        'forget-password' => [
-            'subject' => 'Customer Reset Password',
-            'dear' => 'Dear :name',
-            'info' => 'You are receiving this email because we received a password reset request for your account',
-            'reset-password' => 'Reset Password',
-            'final-summary' => 'If you did not request a password reset, no further action is required',
-            'thanks' => 'Thanks!'
-        ],
-
-        'update-password' => [
-            'subject' => 'Password Updated',
-            'dear' => 'Dear :name',
-            'info' => 'You are receiving this email because you have updated your password.',
-            'thanks' => 'Thanks!'
-        ],
-
-        'customer' => [
-            'new' => [
-                'dear' => 'Dear :customer_name',
-                'username-email' => 'UserName/Email',
-                'subject' => 'New Customer Registration',
-                'password' => 'Password',
-                'summary' => 'Your account has been created.
-                Your account details are below: ',
-                'thanks' => 'Thanks!',
-            ],
-
-            'registration' => [
-                'subject' => 'New Customer Registration',
-                'customer-registration' => 'Customer Registered Successfully',
-                'dear' => 'Dear :customer_name',
-                'greeting' => 'Welcome and thank you for registering with us!',
-                'summary' => 'Your account has now been created successfully and you can login using your email address and password credentials. Upon logging in, you will be able to access other services including reviewing past orders, wishlists and editing your account information.',
-                'thanks' => 'Thanks!',
-            ],
-
-            'verification' => [
-                'heading' => config('app.name') . ' - Email Verification',
-                'subject' => 'Verification Mail',
-                'verify' => 'Verify Your Account',
-                'summary' => 'This is the mail to verify that the email address you entered is yours.
-                Kindly click the Verify Your Account button below to verify your account.'
-            ],
-
-            'subscription' => [
-                'subject' => 'Subscription Email',
-                'greeting' => ' Welcome to ' . config('app.name') . ' - Email Subscription',
-                'unsubscribe' => 'Unsubscribe',
-                'summary' => 'Thanks for putting me into your inbox. It’s been a while since you’ve read ' . config('app.name') . ' email, and we don’t want to overwhelm your inbox. If you still do not want to receive
-                the latest email marketing news then for sure click the button below.'
-            ]
-        ]
     ],
 
-    'BagistoPackages' => [
-        'copy-right' => '© Copyright :year BagistoPackages Software, All rights reserved',
+    'error' => [
+        'go-to-home' => 'GO TO HOME',
+        'in-maitainace' => 'In Maintenance',
+        'right-back' => 'Be Right Back',
+
+        '404' => [
+            'page-title' => '404 Page not found',
+            'name' => '404',
+            'title' => 'Page Not found',
+            'message' => 'The Page you are looking for does not exist or have been moved. Navigate using sidemenu.'
+        ],
+        '403' => [
+            'page-title' => '403 forbidden Error',
+            'name' => '403',
+            'title' => 'Forbidden error',
+            'message' => 'You do not have permission to access this page'
+        ],
+        '500' => [
+            'page-title' => '500 Internal Server Error',
+            'name' => '500',
+            'title' => 'Internal Server Error',
+            'message' => 'The Server Encountered an internal error.'
+        ],
+        '401' => [
+            'page-title' => '401 Unauthorized Error',
+            'name' => '401',
+            'title' => 'Unauthorized Error',
+            'message' => 'The request has not been applied because it lacks valid authentication credentials for the target resource.'
+        ],
     ],
 
     'response' => [
+        'cancel-success' => ':name canceled successfully.',
+        'cancel-error' => ':name can not be canceled.',
         'create-success' => ':name created successfully.',
         'update-success' => ':name updated successfully.',
         'delete-success' => ':name deleted successfully.',
-        'submit-success' => ':name submitted successfully.'
+        'delete-failed' => 'Error encountered while deleting :name.',
+        'submit-success' => ':name submitted successfully.',
+        'order-pending' => 'Cannot delete :name account because some Order(s) are pending or processing state.',
+        'product-can-not-be-copied' => 'Products of type :type can not be copied',
     ],
 ];

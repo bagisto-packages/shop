@@ -95,10 +95,10 @@
                         <div slot="body">
                             <div class="control-group" :class="[errors.has('password') ? 'has-error' : '']">
                                 <label for="password"
-                                       class="required">{{ __('admin::app.users.users.password') }}</label>
+                                       class="required">{{ __('shop::app.users.users.password') }}</label>
                                 <input type="password" v-validate="'required|min:6|max:18'" class="control"
                                        id="password" name="password"
-                                       data-vv-as="&quot;{{ __('admin::app.users.users.password') }}&quot;"/>
+                                       data-vv-as="&quot;{{ __('shop::app.users.users.password') }}&quot;"/>
                                 <span class="control-error" v-if="errors.has('password')">@{{ errors.first('password') }}</span>
                             </div>
 
