@@ -40,7 +40,7 @@ class CreateProductFlatTable extends Migration
             $table->integer('color')->nullable();
             $table->string('color_label')->nullable();
             $table->integer('size')->nullable();
-            $table->string('size_label')->change();
+            $table->string('size_label');
             $table->datetime('created_at');
             $table->datetime('updated_at')->nullable();
             $table->string('locale')->nullable();
