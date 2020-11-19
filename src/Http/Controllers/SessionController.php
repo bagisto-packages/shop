@@ -79,10 +79,10 @@ class SessionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param int|null $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id)
+    public function destroy($id = null)
     {
         auth()->guard('customer')->logout();
 
