@@ -19,8 +19,8 @@ class CreateBookingProductAppointmentSlotsTable extends Migration
             $table->integer('break_time')->nullable();
             $table->boolean('same_slot_all_days')->nullable();
             $table->json('slots')->nullable();
-
             $table->integer('booking_product_id')->unsigned();
+
             $table->foreign('booking_product_id')->references('id')->on('booking_products')->onDelete('cascade');
         });
     }

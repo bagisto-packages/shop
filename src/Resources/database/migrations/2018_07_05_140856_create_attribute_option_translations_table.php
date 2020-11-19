@@ -18,7 +18,9 @@ class CreateAttributeOptionTranslationsTable extends Migration
             $table->string('locale');
             $table->text('label')->nullable();
             $table->integer('attribute_option_id')->unsigned();
+
             $table->unique(['attribute_option_id', 'locale']);
+
             $table->foreign('attribute_option_id')->references('id')->on('attribute_options')->onDelete('cascade');
         });
     }

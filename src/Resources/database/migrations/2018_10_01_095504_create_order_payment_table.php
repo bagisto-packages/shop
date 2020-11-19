@@ -18,8 +18,9 @@ class CreateOrderPaymentTable extends Migration
             $table->string('method');
             $table->string('method_title')->nullable();
             $table->integer('order_id')->nullable()->unsigned();
-            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->timestamps();
+
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
         });
     }
 

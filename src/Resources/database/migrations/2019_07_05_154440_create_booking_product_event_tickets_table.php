@@ -17,8 +17,11 @@ class CreateBookingProductEventTicketsTable extends Migration
             $table->increments('id');
             $table->decimal('price', 12, 4)->default(0)->nullable();
             $table->integer('qty')->default(0)->nullable();
-
+            $table->decimal('special_price', 12,4)->nullable();
+            $table->dateTime('special_price_from')->nullable();
+            $table->dateTime('special_price_to')->nullable();
             $table->integer('booking_product_id')->unsigned();
+
             $table->foreign('booking_product_id')->references('id')->on('booking_products')->onDelete('cascade');
         });
     }

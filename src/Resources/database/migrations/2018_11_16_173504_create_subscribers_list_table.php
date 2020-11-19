@@ -16,11 +16,12 @@ class CreateSubscribersListTable extends Migration
         Schema::create('subscribers_list', function (Blueprint $table) {
             $table->increments('id');
             $table->string('email');
+            $table->integer('channel_id')->unsigned();
             $table->boolean('is_subscribed')->default(0);
             $table->string('token')->nullable();
-            $table->integer('channel_id')->unsigned();
-            $table->foreign('channel_id')->references('id')->on('channels')->onDelete('cascade');
             $table->timestamps();
+
+            $table->foreign('channel_id')->references('id')->on('channels')->onDelete('cascade');
         });
     }
 

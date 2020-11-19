@@ -17,9 +17,10 @@ class CreateCustomerCompareProductsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('customer_id');
             $table->unsignedInteger('product_flat_id');
+            $table->timestamps();
+
             $table->foreign('customer_id')->references('id')->on('customers')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('product_flat_id')->references('id')->on('product_flat')->onUpdate('cascade')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

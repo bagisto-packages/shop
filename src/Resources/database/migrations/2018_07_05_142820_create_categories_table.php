@@ -19,7 +19,11 @@ class CreateCategoriesTable extends Migration
             $table->integer('position')->default(0);
             $table->string('image')->nullable();
             $table->boolean('status')->default(0);
+            $table->string('display_mode')->default('products_and_description')->nullable();
+            $table->json('additional')->nullable();
+
             NestedSet::columns($table);
+
             $table->timestamps();
         });
     }

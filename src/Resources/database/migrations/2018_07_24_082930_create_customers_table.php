@@ -15,20 +15,24 @@ class CreateCustomersTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('channel_id')->unsigned();
-            $table->foreign('channel_id')->references('id')->on('channels')->onDelete('restrict');
             $table->string('first_name');
             $table->string('last_name');
-            $table->enum('gender', ['Male', 'Female']);
+            $table->string('gender')->nullable();
             $table->date('date_of_birth')->nullable();
             $table->string('email')->unique();
+            $table->string('phone')->nullable();
+            $table->boolean('is_verified')->default(0);
             $table->tinyInteger('status')->default(1);
             $table->string('password');
+            $table->text('notes')->nullable();
+            $table->string('token')->nullable();
+            $table->string('api_token', 80)->unique()->nullable()->default(null);
             $table->integer('customer_group_id')->unsigned()->nullable();
-            $table->foreign('customer_group_id')->references('id')->on('customer_groups')->onDelete('set null');
             $table->boolean('subscribed_to_news_letter')->default(0);
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('customer_group_id')->references('id')->on('customer_groups')->onDelete('set null');
         });
     }
 

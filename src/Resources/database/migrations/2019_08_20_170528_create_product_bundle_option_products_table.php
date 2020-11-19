@@ -19,12 +19,11 @@ class CreateProductBundleOptionProductsTable extends Migration
             $table->boolean('is_user_defined')->default(1);
             $table->boolean('is_default')->default(0);
             $table->integer('sort_order')->default(0);
-
             $table->integer('product_bundle_option_id')->unsigned();
-            $table->foreign('product_bundle_option_id')->references('id')->on('product_bundle_options')->onDelete('cascade');
-
             $table->integer('product_id')->unsigned();
+
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->foreign('product_bundle_option_id')->references('id')->on('product_bundle_options')->onDelete('cascade');
         });
     }
 

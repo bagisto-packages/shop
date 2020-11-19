@@ -22,8 +22,8 @@ class CreateBookingProductTableSlotsTable extends Migration
             $table->integer('prevent_scheduling_before');
             $table->boolean('same_slot_all_days')->nullable();
             $table->json('slots')->nullable();
-
             $table->integer('booking_product_id')->unsigned();
+            
             $table->foreign('booking_product_id')->references('id')->on('booking_products')->onDelete('cascade');
         });
     }

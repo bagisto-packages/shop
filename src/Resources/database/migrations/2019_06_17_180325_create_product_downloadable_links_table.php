@@ -26,11 +26,10 @@ class CreateProductDownloadableLinksTable extends Migration
             $table->string('sample_type')->nullable();
             $table->integer('downloads')->default(0);
             $table->integer('sort_order')->nullable();
-
             $table->integer('product_id')->unsigned();
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-
             $table->timestamps();
+
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 

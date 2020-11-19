@@ -16,8 +16,8 @@ class CreateCartItemInventoriesTable extends Migration
         Schema::create('cart_item_inventories', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('qty')->unsigned()->default(0);
-            $table->integer('inventory_source_id')->unsigned()->nullable();
             $table->integer('cart_item_id')->unsigned()->nullable();
+            $table->integer('inventory_source_id')->unsigned()->nullable();
             $table->timestamps();
         });
     }

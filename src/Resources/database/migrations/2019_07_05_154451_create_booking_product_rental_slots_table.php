@@ -20,8 +20,8 @@ class CreateBookingProductRentalSlotsTable extends Migration
             $table->decimal('hourly_price', 12, 4)->default(0)->nullable();
             $table->boolean('same_slot_all_days')->nullable();
             $table->json('slots')->nullable();
-
             $table->integer('booking_product_id')->unsigned();
+
             $table->foreign('booking_product_id')->references('id')->on('booking_products')->onDelete('cascade');
         });
     }

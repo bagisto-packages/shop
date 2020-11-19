@@ -17,8 +17,8 @@ class CreateProductDownloadableSampleTranslationsTable extends Migration
             $table->increments('id');
             $table->string('locale');
             $table->text('title')->nullable();
-            
             $table->integer('product_downloadable_sample_id')->unsigned();
+
             $table->foreign('product_downloadable_sample_id', 'sample_translations_sample_id_foreign')->references('id')->on('product_downloadable_samples')->onDelete('cascade');
         });
     }

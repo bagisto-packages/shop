@@ -16,17 +16,21 @@ class CreateCustomerAddressesTable extends Migration
         Schema::create('customer_addresses', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('customer_id')->unsigned();
-            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
             $table->string('address1');
             $table->string('address2')->nullable();
             $table->string('country');
             $table->string('state');
             $table->string('city');
-            $table->integer('postcode');
+            $table->string('postcode');
             $table->string('phone');
             $table->boolean('default_address')->default(0);
-            $table->string('name')->nullable();
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('company_name')->nullable();
+            $table->string('vat_id')->nullable();
             $table->timestamps();
+
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
         });
     }
 
