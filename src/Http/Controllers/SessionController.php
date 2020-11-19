@@ -88,6 +88,6 @@ class SessionController extends Controller
 
         Event::dispatch('customer.after.logout', $id);
 
-        return redirect()->route('customer.session.index');
+        return redirect()->route('shop.customer.session.index');
     }
 }
