@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRemoveCatalogRuleTables extends Migration
+class CreateCustomerPasswordResets extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,11 @@ class CreateRemoveCatalogRuleTables extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('catalog_rule_customer_groups');
-
-        Schema::dropIfExists('catalog_rule_channels');
-
-        Schema::dropIfExists('catalog_rule_products');
-
-        Schema::dropIfExists('catalog_rule_products_price');
-
-        Schema::dropIfExists('catalog_rules');
+        Schema::create('customer_password_resets', function (Blueprint $table) {
+            $table->string('email')->index();
+            $table->string('token');
+            $table->timestamp('created_at')->nullable();
+        });
     }
 
     /**
@@ -31,6 +27,6 @@ class CreateRemoveCatalogRuleTables extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('customer_password_resets');
     }
 }
