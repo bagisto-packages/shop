@@ -108,7 +108,8 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
     Route::get('/comparison', 'ComparisonController@getComparisonList')->name('product.compare');
     Route::put('/comparison', 'ComparisonController@addCompareProduct')->name('customer.product.add.compare');
     Route::delete('/comparison', 'ComparisonController@deleteComparisonProduct')->name('customer.product.delete.compare');
-    Route::get('/items-count', 'ShopController@getItemsCount')->name('velocity.product.item-count');
+    Route::get('/items-count', 'ShopController@getItemsCount')->name('product.item-count');
+    Route::get('/detailed-products', 'ShopController@getDetailedProducts')->name('product.details');
 
     Route::group(['middleware' => ['customer']], function () {
         Route::get('/customer/account/comparison', 'ComparisonController@getCustomerComparisonList')->name('customer.product.compare');

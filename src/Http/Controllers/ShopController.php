@@ -2,8 +2,8 @@
 
 namespace BagistoPackages\Shop\Http\Controllers;
 
-use BagistoPackages\Shop\Repositories\CustomerCompareProductRepository;
 use BagistoPackages\Shop\Repositories\WishlistRepository;
+use BagistoPackages\Shop\Repositories\CustomerCompareProductRepository;
 
 class ShopController extends Controller
 {
@@ -42,6 +42,26 @@ class ShopController extends Controller
                 'status' => true,
                 'compareProductsCount' => $comparedItemsCount,
                 'wishlistedProductsCount' => $wishlistItemsCount,
+            ];
+        }
+
+        return response()->json($response ?? ['status' => false]);
+    }
+
+    /**
+     * This function will provide details of multiple product
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getDetailedProducts()
+    {
+        if ($items = request()->get('items')) {
+            $moveToCart = request()->get('moveToCart');
+            $productCollection = (new ComparisonController)->fetchProductCollection($items, $moveToCart);
+
+            $response = [
+                'status' => 'success',
+                'products' => $productCollection,
             ];
         }
 

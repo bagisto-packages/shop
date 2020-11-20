@@ -218,7 +218,7 @@ class ComparisonController extends Controller
         ];
     }
 
-    private function fetchProductCollection($items, $moveToCart = false, $separator = '&')
+    public function fetchProductCollection($items, $moveToCart = false, $separator = '&')
     {
         $productCollection = [];
         $productIds = explode($separator, $items);
@@ -255,7 +255,7 @@ class ComparisonController extends Controller
         return $productCollection;
     }
 
-    private function formatProduct($product, $list = false, $metaInformation = [])
+    protected function formatProduct($product, $list = false, $metaInformation = [])
     {
         $reviewHelper = app('BagistoPackages\Shop\Helpers\Review');
         $productImageHelper = app('BagistoPackages\Shop\Helpers\ProductImage');
