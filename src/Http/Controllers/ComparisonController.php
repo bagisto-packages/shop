@@ -3,11 +3,17 @@
 namespace BagistoPackages\Shop\Http\Controllers;
 
 use BagistoPackages\Shop\Repositories\ProductRepository;
+use BagistoPackages\Shop\Repositories\WishlistRepository;
 use BagistoPackages\Shop\Repositories\ProductFlatRepository;
 use BagistoPackages\Shop\Repositories\CustomerCompareProductRepository as CustomerCompareProductRepository;
 
 class ComparisonController extends Controller
 {
+    /**
+     * @var WishlistRepository
+     */
+    protected $wishlistRepository;
+
     /**
      * @var CustomerCompareProductRepository
      */
@@ -17,6 +23,7 @@ class ComparisonController extends Controller
      * @var ProductFlatRepository
      */
     protected $productFlatRepository;
+
     /**
      * @var ProductRepository
      */
@@ -25,19 +32,64 @@ class ComparisonController extends Controller
     /**
      * ComparisonController constructor.
      *
+     * @param WishlistRepository $wishlistRepository
      * @param CustomerCompareProductRepository $compareProductRepository
      * @param ProductFlatRepository $productFlatRepository
      * @param ProductRepository $productRepository
      */
     public function __construct(
+        WishlistRepository $wishlistRepository,
         CustomerCompareProductRepository $compareProductRepository,
         ProductFlatRepository $productFlatRepository,
         ProductRepository $productRepository
     )
     {
+        $this->wishlistRepository = $wishlistRepository;
         $this->compareProductRepository = $compareProductRepository;
         $this->productFlatRepository = $productFlatRepository;
         $this->productRepository = $productRepository;
+    }
+
+    public function getItemsCount()
+    {
+        if ($customer = auth()->guard('customer')->user()) {
+            $wishlistItemsCount = $this->wishlistRepository->count([
+                'customer_id' => $customer->id,
+                'channel_id' => core()->getCurrentChannel()->id,
+            ]);
+
+            $comparedItemsCount = $this->compareProductRepository->count([
+                'customer_id' => $customer->id,
+            ]);
+
+            $response = [
+                'status' => true,
+                'compareProductsCount' => $comparedItemsCount,
+                'wishlistedProductsCount' => $wishlistItemsCount,
+            ];
+        }
+
+        return response()->json($response ?? ['status' => false]);
+    }
+
+    /**
+     * This function will provide details of multiple product
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getDetailedProducts()
+    {
+        if ($items = request()->get('items')) {
+            $moveToCart = request()->get('moveToCart');
+            $productCollection = $this->fetchProductCollection($items, $moveToCart);
+
+            $response = [
+                'status' => 'success',
+                'products' => $productCollection,
+            ];
+        }
+
+        return response()->json($response ?? ['status' => false]);
     }
 
     /**
@@ -218,7 +270,7 @@ class ComparisonController extends Controller
         ];
     }
 
-    public function fetchProductCollection($items, $moveToCart = false, $separator = '&')
+    private function fetchProductCollection($items, $moveToCart = false, $separator = '&')
     {
         $productCollection = [];
         $productIds = explode($separator, $items);
@@ -255,7 +307,7 @@ class ComparisonController extends Controller
         return $productCollection;
     }
 
-    protected function formatProduct($product, $list = false, $metaInformation = [])
+    private function formatProduct($product, $list = false, $metaInformation = [])
     {
         $reviewHelper = app('BagistoPackages\Shop\Helpers\Review');
         $productImageHelper = app('BagistoPackages\Shop\Helpers\ProductImage');
